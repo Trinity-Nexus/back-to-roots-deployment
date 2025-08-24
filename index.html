@@ -1,26 +1,551 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.jpeg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BackToRoots - Unlock Curiosity. Inspire Creativity.</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-      body {
-        /* margin: 0; */
-        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#5E8C2C">
+  <title>Back To Roots - Unlock Curiosity. Inspire Creativity</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600..800&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize nav element
+      const nav = document.querySelector('.nav');
+      const menuButton = document.querySelector('.nav__menu-button');
+      const mobileLinks = document.querySelectorAll('.nav__mobile-link');
+      let lastScroll = 0;
+      
+      // Mobile menu toggle
+      if (menuButton) {
+    menuButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      nav.classList.toggle('menu-open');
+      document.body.classList.toggle('menu-open');          // Debug log
+          console.log('Menu button clicked, menu-open class:', nav.classList.contains('menu-open'));
+        });
       }
-    </style>
-    <script type="module" crossorigin src="/assets/index-dMpwHxso.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cg4C8hIu.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+      // Close menu when clicking a link
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('menu-open');
+          document.body.classList.remove('menu-open');
+          document.body.style.overflow = '';
+          
+          // Debug log
+          console.log('Mobile link clicked, menu closed');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (nav.classList.contains('menu-open') && 
+            !e.target.closest('.nav__mobile-menu') && 
+            !e.target.closest('.nav__menu-button')) {
+          nav.classList.remove('menu-open');
+          document.body.classList.remove('menu-open');
+          document.body.style.overflow = '';
+          
+          // Debug log
+          console.log('Clicked outside, menu closed');
+        }
+      });
+      
+      // Hide header on scroll down, show on scroll up
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+          nav.classList.remove('nav--hidden');
+          return;
+        }
+        
+        if (currentScroll > lastScroll && !nav.classList.contains('nav--hidden')) {
+          // Scroll Down
+          nav.classList.add('nav--hidden');
+        } else if (currentScroll < lastScroll && nav.classList.contains('nav--hidden')) {
+          // Scroll Up
+          nav.classList.remove('nav--hidden');
+        }
+        
+        lastScroll = currentScroll;
+      });
+      
+      // Debug log
+      console.log('Navigation initialized');
+    });
+  </script>
+</head>
+<body style="padding-top: 60px;">
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#home">
+        <img src="./assets/icons/logo-C0GJMs8s.jpeg" alt="Back to Roots Logo" style="height: 50px; vertical-align: middle;">
+        <span>Back to Roots</span>
+      </a>
+      <button class="nav__menu-button" aria-label="Toggle menu">
+        <span class="nav__menu-icon"></span>
+      </button>
+      <div class="nav__links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#stories">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20intereseted%20in%20your%20program.%20Please%20get%20me%20more%20information%20on%20this." target="_blank" class="nav__cta">Join Us</a>
+      </div>
+    </div>
+    <div class="nav__mobile-menu">
+      <div class="nav__mobile-menu-inner">
+        <div class="nav__mobile-header">
+          <a class="nav__mobile-brand">Back To Roots</a>
+          <button class="nav__close-button" aria-label="Close menu">
+            <!-- <span class="nav__close-icon"></span> -->
+          </button>
+        </div>
+        <div class="nav__mobile-links">
+          <a href="#about" class="nav__mobile-link">About</a>
+          <a href="#programs" class="nav__mobile-link">Programs</a>
+          <a href="#gallery" class="nav__mobile-link">Gallery</a>
+          <a href="#stories" class="nav__mobile-link">Testimonials</a>
+          <a href="#faq" class="nav__mobile-link">FAQ</a>
+          <a href="#contact" class="nav__mobile-link">Contact</a>
+        </div>
+        <div class="nav__mobile-footer">
+          <a href="https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20intereseted%20in%20your%20program.%20Please%20get%20me%20more%20information%20on%20this." target="_blank" class="nav__mobile-cta">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__inner">
+      <div class="hero__left">
+        <h1 class="hero__title">Rekindle the Joy of<br>Childhood, the native way</h1>
+        <p class="hero__subtitle">A transformative outdoor educational program designed to reconnect children with the natural world through immersive experiences and hands-on learning.</p>
+        <div class="hero__crafted">
+          <span class="sparkle">✨</span> Crafted with care by nature education experts
+        </div>
+        <div class="hero__actions">
+          <a href="#programs" class="btn btn--filled">Explore Our Programs</a>
+          <a href="#about" class="btn btn--outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero__right">
+        <div class="media-card">
+          <img src="./assets/event-2/program-2.jpeg" alt="Children playing outdoors" class="media-card__img" />
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave">
+      <svg width="100%" height="100%" viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none">
+        <path d="M0,0 C320,80 520,0 720,40 C920,80 1120,0 1440,40 L1440 80 L0 80 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="below-hero">
+    <div class="about" id="about">
+      <div class="about__inner">
+        <h2 class="about__title">About Back to Roots</h2>
+        <p class="about__lead">We believe every child deserves the opportunity to develop a deep, meaningful connection with the natural world.</p>
+        <p class="about__copy">Our carefully curated programs combine outdoor exploration, hands-on learning experiences, and expert guidance to foster environmental awareness, personal growth, and a lifelong love for nature.</p>
+        
+        <div class="mission-card">
+          <h3 class="mission__title">Our Mission</h3>
+          <!-- <p class="mission__text">To inspire and empower the next generation of environmental stewards through immersive nature education, fostering a deep appreciation for the natural world and sustainable living practices.</p> -->
+          <p class="mission__text">To reconnect children with the natural world, fostering a generation of environmentally conscious, emotionally intelligent, and physically healthy individuals who will lead the way toward a sustainable future.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="programs" id="programs">
+      <div class="programs__inner">
+        <h2 class="programs__title">Our Programs</h2>
+        <p class="programs__subtitle">Choose from our range of engaging programs designed to suit different age groups and interests.</p>
+
+        <div class="programs__grid">
+          <div class="p-card">
+            <div class="p-card__icon">🦋</div>
+            <h3 class="p-card__title">Grains, Games & Gratitude</h3>
+            <div class="p-card__pills">
+              <span class="pill pill--age">Ages 7-12</span>
+              <span class="pill pill--price">Rs 500</span>
+            </div>
+            <p class="p-card__desc">Create, learn, play, and give back! From crafting mandala art with millets to discovering their nutritional power, enjoying Lagori, and making a heartfelt gratitude card—this journey is all about creativity, tradition, and joy.</p>
+            <a href="./programs/grains-games-gratitude.html" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
+          </div>
+
+          <div class="p-card">
+            <div class="p-card__icon">🌳</div>
+            <h3 class="p-card__title">Ajji's Courtyard Adventures</h3>
+            <div class="p-card__pills">
+              <span class="pill pill--age">Ages 4-12</span>
+              <span class="pill pill--price">Rs 500</span>
+            </div>
+            <p class="p-card__desc">Step into a world of mud pies, games, seeds & stories – just like Ajji’s good old days! Craft, plant & play the natural way – at our Courtyard</p>
+            <a href="./programs/ajjis-courtyard-adventures.html" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
+          </div>
+          
+          <!-- <div class="p-card">
+            <div class="p-card__icon">🦋</div>
+            <h3 class="p-card__title">Ajja's Earth Warriors</h3>
+            <div class="p-card__pills">
+              <span class="pill pill--age">Ages 7-12</span>
+              <span class="pill pill--price">Rs 600</span>
+            </div>
+            <p class="p-card__desc">Become a guardian of the earth! Join Ajja's Earth Warriors to learn about composting along with lots of other outdoor fun of his times.</p>
+            <a href="#enroll" class="p-card__cta">Learn More</a>
+          </div> -->
+
+          
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="gallery" id="gallery">
+      <div class="gallery__inner">
+        <h2 class="gallery__title">Gallery Glimpses</h2>
+        <p class="gallery__subtitle">Our Malgudi moments where every frame holds a story of simple joys, curious hands and wonder in eyes.</p>
+
+        <!-- Photo strip: horizontally scrollable photo cards that auto-advance -->
+        <section class="photo-strip" aria-label="Photo strip">
+          <div class="photo-strip__container" id="photoStrip">
+            <figure class="photo-card">
+              <img src="./assets/gallery/3.JPG" alt="Play area slide">
+              <!-- <figcaption>🧩 play area</figcaption> -->
+            </figure>
+            <figure class="photo-card">
+              <img src="./assets/gallery/1.JPG" alt="Homerooms - learning space">
+              <!-- <figcaption>🎨 warli art</figcaption> -->
+            </figure>
+            <figure class="photo-card">
+              <img src="./assets/gallery/2.JPG" alt="Art studio">
+              <!-- <figcaption>🏠 art studio</figcaption> -->
+            </figure>
+            
+            <figure class="photo-card">
+              <img src="./assets/gallery/playtime-img-3.jpeg" alt="Makerspace">
+              <!-- <figcaption>🏖️ outdoor discovery</figcaption> -->
+            </figure>
+            <figure class="photo-card">
+              <img src="./assets/gallery/farmvisit3a.jpg" alt="Meal zone">
+              <!-- <figcaption>🌿 farm visit</figcaption> -->
+            </figure>
+            <figure class="photo-card">
+              <img src="./assets/gallery/playtime-img-2.jpeg" alt="Sand pit">
+              <!-- <figcaption>🌿 farm visit</figcaption> -->
+            </figure>
+            <figure class="photo-card">
+              <img src="./assets/gallery/8.jpeg" alt="Outdoor discovery">
+              <!-- <figcaption>🏖️ traditional games</figcaption> -->
+            </figure>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="stories" id="stories">
+      <div class="stories__inner">
+        <h2 class="stories__title">Echoes of Joy</h2>
+        <p class="stories__subtitle">The sweetest melodies are the voices of families who have rediscovered the joy of simple moments and meaningful connections.</p>
+
+        
+        <div class="testimonial-carousel" id="testimonialCarousel" aria-live="polite">
+          <div class="testimonial-item active">
+            <div class="testimonial-card">
+              <span class="testimonial-card__quote">"</span>
+              <p class="testimonial-card__text">In a world full of screens, Back to Roots gave my daughter the joy of slowing down. She came home with muddy hands, sparking eyes and stories about composting and crows. I could not have asked for a better Sunday!</p>
+              <div class="testimonial-card__footer">
+                <span class="testimonial-card__author">Priya Setty</span>
+                <span class="testimonial-card__role">Mom of Aarohi, age 8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-card">
+              <span class="testimonial-card__quote">"</span>
+              <p class="testimonial-card__text">Back to Roots farm visit was a revelation! Shriya came back with a newfound respect for nature and stories about how our ancestors lived in harmony with the earth. It was like watching her connect the dots of her own heritage.</p>
+              <div class="testimonial-card__footer">
+                <span class="testimonial-card__author">Tapasvi Patel</span>
+                <span class="testimonial-card__role">Mom of Shriya, age 12</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-card">
+              <span class="testimonial-card__quote">"</span>
+              <p class="testimonial-card__text">My son hasn't stopped talking about 'Ajji's courtyard'! From playing lagori to planting saplings, every moment was pure childhood. This is what real learning feels like - alive, messy and full of wonder.</p>
+              <div class="testimonial-card__footer">
+                <span class="testimonial-card__author">Shivansh Amma</span>
+                <span class="testimonial-card__role">Age 9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-card">
+              <span class="testimonial-card__quote">"</span>
+              <p class="testimonial-card__text">Back to Roots didnt just engage my child -it touched our whole family. Varuni showed the flower garland she made to her Grany and told about Panchatantra story at dinner, and we ended up sharing our own childhood memories. Its not just workshop, its a bridge across generations </p>
+              <div class="testimonial-card__footer">
+                <span class="testimonial-card__author">Varuni's Appa</span>
+                <span class="testimonial-card__role">Age 8</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="faq" id="faq">
+      <div class="faq__inner">
+        <h2 class="faq__title">Frequently Asked Questions</h2>
+        
+        <div class="faq__list">
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Where do I get to see photos/videos of my child’s session?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              We capture sweet moments during each workshop and share curated photos and videos with parents in a link afterwards. It’s a great way to witness their joy and growth.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Why doesnt B2R have a dedicated centre?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              Back to Roots is not a place- Its a way of learning, living and growing. B2R mission is to reconnect children with real world settings and not confine them into a building. We have witnessed real learning happens in open spaces and community environments.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Is the session supervised at all times?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              Absolutely. Safety is our priority. All sessions are facilitated by trained adults who maintain a warm, watchful environment. We work with small groups to ensure every child is seen, heard, and cared for.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              How are your sessions different from regular extracurricular classes?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              We focus on experience, not instruction. Kids don’t just sit and practice — they craft, plant, move, laugh, and reflect. It’s unplugged, grounded in Indian culture, and full of creative freedom — helping build emotional intelligence, observation skills, and joy.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Who are the facilitators, and what’s their background?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              Our facilitators come from backgrounds in early education, folk art, gardening, and child psychology. More importantly, they love working with children and are passionate about keeping traditional knowledge alive through playful methods.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              What if my child misses a session?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              We understand life happens. While we don’t offer refunds for missed sessions, we’ll try our best to accommodate your child in a future batch or make-up activity depending on availability.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Do you collaborate with schools or communities for private batches?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              Yes! We love working with schools, apartments, and learning communities. If you're an educator or parent who wants to bring Back to Roots to your campus or group, just reach out — we’ll customize it for you, while alligning with our Phyilosophy.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Are these programs age-specific?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              Yes. We thoughtfully group children by age to ensure the activities are developmentally engaging. Most workshops are designed for kids aged 4–8 years and 8–12 years, with age-appropriate challenges, learnings and experiences.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Do children need any prior knowledge or skill to join?
+              <span class="faq-item__icon"></span>
+            </summary>
+            <div class="faq-item__answer">
+              Not at all! Our programs are beginner-friendly. All we ask is that kids come curious, and ready to explore.We make it joyful and meaningful.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ready-section">
+    <div class="ready-section__inner">
+      <h2 class="ready-section__title">Ready to Start?</h2>
+      <p class="ready-section__text">At Back to Roots, you're not just booking a program — you're joining a community of families who believe in simple joys, shared stories, and the magic of children growing up close to nature.</p>
+      <p class="ready-section__welcome">We can't wait to welcome you home.</p>
+        <div class="ready-section__actions">
+        <a href="https://chat.whatsapp.com/EznhmH52YwM6JZpNmM6483?mode=ems_share_c" target="_blank" rel="noopener noreferrer" class="ready-section__button ready-section__button--primary">Join Our Community</a>
+        <a href="mailto:backtoroot.in@gmail.com" target="_blank" rel="noopener noreferrer" class="ready-section__button ready-section__button--secondary">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand-section">
+        <a href="#" class="footer__brand">
+          <img src="./assets/icons/logo-C0GJMs8s.jpeg" alt="Back to Roots Logo" style="height: 40px; vertical-align: middle; border-radius: 20px;"> 
+          Back to Roots
+        </a>
+        <p class="footer__tagline">Rekindle the Joy of Childhood, the native way</p>
+      </div>
+
+      <div class="footer__links-section">
+        <h3 class="footer__heading">Quick Links</h3>
+        <ul class="footer__links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__connect-section">
+        <h3 class="footer__heading">Connect With Us</h3>
+        <p style="color: #D4B594; margin-bottom: 16px;">Join our community of nature-loving families</p>
+        <div class="footer__social">
+          <a href="https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20intereseted%20in%20your%20program.%20Please%20get%20me%20more%20information%20on%20this." target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="WhatsApp">
+            <img src="./assets/icons/whatsapp.png" alt="WhatsApp" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61578203056668" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook">
+            <img src="./assets/icons/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/backtoroots.kids" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+            <img src="./assets/icons/instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://www.threads.net/@backtoroots.kids" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Threads">
+            <img src="./assets/icons/threads.png" alt="Threads" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__copyright">
+        © 2025 Back to Roots. Made with <span class="footer__heart">❤️</span> for childhood magic.
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Seamless round-robin marquee for the photo strip
+    (function() {
+      const strip = document.getElementById('photoStrip');
+      if (!strip) return;
+
+      // Wrap existing items into a rail element for duplication
+      const rail = document.createElement('div');
+      rail.className = 'photo-strip__rail';
+
+      // move children into rail
+      while (strip.firstChild) {
+        rail.appendChild(strip.firstChild);
+      }
+
+      // clone rail content to create seamless loop
+      const railClone = rail.cloneNode(true);
+      strip.appendChild(rail);
+      strip.appendChild(railClone);
+
+      let paused = false;
+      let speed = 40; // pixels per second
+      let pos = 0;
+      let lastTime = null;
+
+      function step(timestamp) {
+        if (paused) { lastTime = timestamp; requestAnimationFrame(step); return; }
+        if (lastTime == null) lastTime = timestamp;
+        const delta = (timestamp - lastTime) / 1000; // seconds
+        lastTime = timestamp;
+        pos += speed * delta;
+
+        // When pos exceeds width of first rail, wrap
+        const railWidth = rail.scrollWidth;
+        if (pos >= railWidth) {
+          pos -= railWidth;
+        }
+
+        strip.scrollLeft = Math.floor(pos);
+        requestAnimationFrame(step);
+      }
+
+      strip.addEventListener('mouseenter', () => { paused = true; });
+      strip.addEventListener('mouseleave', () => { paused = false; });
+
+      // start animation
+      requestAnimationFrame(step);
+    })();
+  </script>
+  <script>
+    // Testimonial carousel: rotate 4 items every 3 seconds, pause on hover/focus
+    (function() {
+      const carousel = document.getElementById('testimonialCarousel');
+      if (!carousel) return;
+      const items = Array.from(carousel.querySelectorAll('.testimonial-item'));
+      let current = 0;
+      let timer = null;
+      const interval = 3000;
+
+      function show(index) {
+        items.forEach((it, i) => it.classList.toggle('active', i === index));
+        // update aria-live by moving focusable element if needed
+      }
+
+      function start() {
+        if (timer) return;
+        timer = setInterval(() => {
+          current = (current + 1) % items.length;
+          show(current);
+        }, interval);
+      }
+
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', start);
+
+      // initialize
+      show(0);
+      start();
+    })();
+  </script>
+</body>
 </html>
