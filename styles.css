@@ -531,7 +531,14 @@ body:not(.menu-open) .main-content {
 .hero__bg { position: absolute; inset: 0; background: radial-gradient(120% 120% at 20% 10%, #F3E69A 0%, #FFF3BF 40%, #F0F5E9 100%); }
 .hero__inner { position: relative; max-width: 1200px; margin: 0 auto; padding: 48px 24px 40px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
 .hero__title { margin: 0 0 12px; font-family: 'Baloo 2', cursive; font-size: 56px; line-height: 1.1; color: #8C4E1D; letter-spacing: 0.5px; }
-.hero__subtitle { margin: 0 0 18px; font-size: 16px; line-height: 1.8; color: #6b6b6b; max-width: 600px; }
+.hero__subtitle { margin: 0 0 24px; 
+  font-size: 18px; 
+  line-height: 1.8; 
+  color: #6b6b6b; 
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 600; }
 .hero__crafted { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #7A6D57; margin: 10px 0 24px; }
 .sparkle { font-size: 16px; }
 .hero__actions { display: flex; gap: 16px; }
@@ -539,6 +546,13 @@ body:not(.menu-open) .main-content {
 .btn { display: inline-block; border-radius: 9999px; padding: 14px 20px; font-weight: 800; text-decoration: none; font-size: 15px; }
 .btn--filled { background: #6E9F2E; color: #fff; box-shadow: 0 10px 24px rgba(110,159,46,0.25); border: 1px solid rgba(0,0,0,0.05); }
 .btn--filled:hover { background: #648F29; }
+
+/* Sindhu's Button changes */
+.btn--hero { 
+  padding: 18px 32px; 
+  font-size: 18px; 
+  font-weight: 700; 
+}
 .btn--outline { background: transparent; color: #7B8B47; border: 2px solid #B8C988; }
 .btn--outline:hover { background: rgba(184,201,136,0.1); }
 
@@ -1096,4 +1110,119 @@ body:not(.menu-open) .main-content {
   
   .hero__title { font-size: 64px; }
   .media-card { height: 400px; }
+}
+/* --------------------------------------------Sindhu's Changes-------------------------- */
+
+/* Updated Hero Section - Centered Layout */
+.hero__inner { 
+  position: relative; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 80px 24px 60px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+
+.hero__left {
+  max-width: 800px; /* Control content width */
+  width: 100%;
+}
+
+.hero__title { 
+  margin: 0 0 16px; 
+  font-family: 'Baloo 2', cursive; 
+  font-size: 56px; 
+  line-height: 1.1; 
+  color: #8C4E1D; 
+  letter-spacing: 0.5px; 
+}
+
+.hero__subtitle { 
+  margin: 0 0 24px; 
+  font-size: 18px; 
+  line-height: 1.8; 
+  color: #6b6b6b; 
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__crafted { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  gap: 8px; 
+  font-size: 14px; 
+  color: #7A6D57; 
+  margin: 0 0 32px; 
+}
+
+.hero__actions { 
+  display: flex; 
+  gap: 16px; 
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Remove the right column entirely */
+.hero__right {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .hero__inner { 
+    padding: 60px 20px 40px;
+    gap: 24px;
+  }
+  
+  .hero__title { 
+    font-size: 42px; 
+  }
+  
+  .hero__subtitle { 
+    font-size: 16px; 
+  }
+  
+  .hero__actions { 
+    flex-direction: column; 
+    width: 100%;
+  }
+  
+  .btn { 
+    width: 100%; 
+    text-align: center; 
+  }
+}
+
+@media (max-width: 599px) {
+  .hero__inner { 
+    padding: 48px 16px 32px; 
+  }
+  
+  .hero__title { 
+    font-size: 36px; 
+  }
+  
+  .hero__crafted {
+    font-size: 13px;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1440px) {
+  .hero__title { 
+    font-size: 64px; 
+  }
+  
+  .hero__subtitle {
+    font-size: 20px;
+  }
+  
+  .hero__inner {
+    padding: 100px 24px 80px;
+  }
 }
