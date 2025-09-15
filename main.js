@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     pos += speed * delta;
 
     // When pos exceeds width of first rail, wrap
-    const railWidth = rail.scrollWidth;
+   /*  const railWidth = rail.scrollWidth;
     if (pos >= railWidth) {
       pos -= railWidth;
-    }
+    } */
 
     strip.scrollLeft = Math.floor(pos);
     requestAnimationFrame(step);
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const items = Array.from(carousel.querySelectorAll('.testimonial-item'));
   let current = 0;
   let timer = null;
-  const interval = 3000;
+  const interval = 1500;
 
   function show(index) {
     items.forEach((it, i) => it.classList.toggle('active', i === index));
