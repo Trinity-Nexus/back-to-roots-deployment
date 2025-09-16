@@ -1,0 +1,75 @@
+{
+  "pageTitle": "Ajja's Earth Warriors — Back to Roots",
+  "siteTitle": "Back to Roots",
+  "program": {
+    "title": "Ajja's Earth Warriors",
+    "age": "Ages 7-12",
+    "price": "Rs 600",
+    "description": "Become a guardian of the earth! Join Ajja's Earth Warriors to learn about composting along with lots of other outdoor fun of his times. Discover the magic of turning waste into wealth while enjoying traditional games that have entertained generations.",
+    "imagePath": "../assets/Ajja_composting.png",
+    "imageAlt": "Children learning composting with Ajja"
+  },
+  "experience": {
+    "title": "What You'll Experience",
+    "items": [
+      {
+        "icon": "🌱",
+        "title": "Composting Magic Circle",
+        "description": "Learn the ancient art of composting from Ajja! Discover how kitchen scraps transform into black gold that nourishes Mother Earth."
+      },
+      {
+        "icon": "♻️",
+        "title": "Hands-On Compost Making",
+        "description": "Get your hands dirty as you layer greens and browns, create your own mini compost bin, and understand the science behind decomposition."
+      },
+      {
+        "icon": "🎯",
+        "title": "Traditional Games Galore",
+        "description": "Experience the joy of Lagori, Gilli Danda, and Kancha while learning about sustainable living through play and movement."
+      },
+      {
+        "icon": "🌍",
+        "title": "Earth Warrior Pledge",
+        "description": "Take a special oath to protect our planet, create your Earth Warrior badge, and plan your home composting journey with take-home seeds."
+      }
+    ]
+  },
+  "buttons": {
+    "whatsapp": {
+      "text": "Join / Enquire on WhatsApp",
+      "url": "https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20interested%20in%20Ajja%27s%20Earth%20Warriors%20program.%20Please%20share%20details."
+    },
+    "programs": {
+      "text": "Back to Programs",
+      "url": "../index.html#programs"
+    }
+  },
+  "practicalInfo": {
+    "title": "Practical Info",
+    "items": [
+      {
+        "label": "Age group",
+        "value": "7 – 12 years"
+      },
+      {
+        "label": "Timing",
+        "value": "Morning sessions, 2 hours"
+      },
+      {
+        "label": "Fee",
+        "value": "Rs 600 per child"
+      },
+      {
+        "label": "What to bring",
+        "value": "Old clothes, water bottle, hat, small container for take-home compost"
+      },
+      {
+        "label": "Take home",
+        "value": "Mini compost bin, seeds, Earth Warrior badge"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Back to Roots"
+  }
+}

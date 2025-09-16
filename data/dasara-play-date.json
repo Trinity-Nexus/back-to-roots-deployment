@@ -1,0 +1,71 @@
+{
+  "pageTitle": "Dasara Play Date — Back to Roots",
+  "siteTitle": "Back to Roots",
+  "program": {
+    "title": "Dasara Play Mela",
+    "age": "Ages 6-15",
+    "price": "Rs 399",
+    "description": "Celebrate Dasara with a fun-filled play date at Back to Roots! Enjoy traditional games, craft activities, and festive treats in a vibrant courtyard setting. Perfect for kids aged 6-12 to experience the joy of Dasara through play and creativity.",
+    "imagePath": "../assets/event-3/Dasara.png",
+    "imageAlt": "Dasara Play Date"
+  },
+  "experience": {
+    "title": "What You'll Experience",
+    "items": [
+      {
+        "icon": "🪔",
+        "title": "Dasara Circle Time",
+        "description": "An engaging introduction to the Dasara festival, its history and cultural significance through interactive storytelling and visual aids."
+      },
+      {
+        "icon": "💐",
+        "title": "Garland Making",
+        "description": "Learn the traditional art of tying flowers into garlands and decorations, a key element of Dasara celebrations that children can take home."
+      },
+      {
+        "icon": "🎮",
+        "title": "Kho Kho Playing Time",
+        "description": "Experience the traditional game of Kho Kho, a popular outdoor activity during festivals that enhances coordination and social interaction."
+      },
+      {
+        "icon": "🧘",
+        "title": "Closing Circle",
+        "description": "A calming wind-down session where children reflect on what they've learned, share experiences, and conclude with a simple traditional blessing ritual."
+      }
+    ]
+  },
+  "buttons": {
+    "whatsapp": {
+      "text": "Join / Enquire on WhatsApp",
+      "url": "https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20interested%20in%20the%20Dasara%20Play%20Mela.%20Please%20share%20details."
+    },
+    "programs": {
+      "text": "Back to Programs",
+      "url": "../index.html#programs"
+    }
+  },
+  "practicalInfo": {
+    "title": "Practical Info",
+    "items": [
+      {
+        "label": "Age group",
+        "value": "6 – 12 years"
+      },
+      {
+        "label": "Timing",
+        "value": "Festival special, 90 – 120 minutes"
+      },
+      {
+        "label": "Fee",
+        "value": "Rs 399 per child"
+      },
+      {
+        "label": "What to bring",
+        "value": "Comfortable clothes, water bottle, hat"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Back to Roots"
+  }
+}

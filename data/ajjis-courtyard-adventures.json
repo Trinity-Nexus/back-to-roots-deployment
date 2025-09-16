@@ -1,0 +1,71 @@
+{
+  "pageTitle": "Ajji's Courtyard Adventures — Back to Roots",
+  "siteTitle": "Back to Roots",
+  "program": {
+    "title": "Ajji's Courtyard Adventures",
+    "age": "Ages 4-12",
+    "price": "Rs 500",
+    "description": "Step into a world of mud pies, games, seeds & stories just like Ajji's good old days. Craft, plant & play the natural way with guided activities rooted in tradition and wonder.",
+    "imagePath": "../assets/Ajji.png",
+    "imageAlt": "Ajji's courtyard children playing"
+  },
+  "experience": {
+    "title": "What You Will Experience",
+    "items": [
+      {
+        "icon": "🧶",
+        "title": "Mud & Makers",
+        "description": "Hands on clay and mud play encouraging sensory exploration, simple sculpting and cooperative building."
+      },
+      {
+        "icon": "🌱",
+        "title": "Seed Planting",
+        "description": "Plant seeds in small pots and learn about growth, care, and cycles of nature children take a sapling home."
+      },
+      {
+        "icon": "📚",
+        "title": "Stories with Ajji",
+        "description": "Story circles with folk tales, songs and simple rhymes that connect children to cultural memory."
+      },
+      {
+        "icon": "🎨",
+        "title": "Craft & Play",
+        "description": "Nature inspired craft sessions using grains, leaves and safe materials to create keepsakes."
+      }
+    ]
+  },
+  "buttons": {
+    "whatsapp": {
+      "text": "Join / Enquire on WhatsApp",
+      "url": "https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20interested%20in%20Ajji%27s%20Courtyard%20Adventures.%20Please%20share%20details."
+    },
+    "programs": {
+      "text": "Back to Programs",
+      "url": "../index.html#programs"
+    }
+  },
+  "practicalInfo": {
+    "title": "Practical Info",
+    "items": [
+      {
+        "label": "Age group",
+        "value": "4 – 12 years"
+      },
+      {
+        "label": "Timing",
+        "value": "Weekend sessions, 60 – 90 minutes"
+      },
+      {
+        "label": "Fee",
+        "value": "Rs 500 per child"
+      },
+      {
+        "label": "What to bring",
+        "value": "Sun hat, water bottle, a change of clothes"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Back to Roots"
+  }
+}
