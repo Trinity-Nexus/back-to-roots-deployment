@@ -1,0 +1,93 @@
+{
+  "id": "childhood-wisdom",
+  "title": "Rediscovering Childhood Wisdom: Why Traditional Play Matters",
+  "subtitle": "In a world of digital entertainment, the ancient art of traditional play holds secrets to holistic child development.",
+  "author": "Back to Roots Team",
+  "publishDate": "November 18, 2024", 
+  "readTime": "6 min read",
+  "category": "traditional-play",
+  "tags": ["traditional-play", "culture", "development", "wisdom"],
+  "image": "../assets/gallery/2.JPG",
+  "excerpt": "In a world of digital entertainment, the ancient art of traditional play holds secrets to holistic child development.",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Remember the joy of <strong>lagori</strong>? The thrill of building mud pies? The satisfaction of planting seeds and watching them grow? These weren't just games – they were lessons in life wrapped in pure joy."
+    },
+    {
+      "type": "paragraph",
+      "text": "At Back to Roots, we've witnessed something magical: when children reconnect with traditional play, they don't just have fun – they discover parts of themselves that modern entertainment often leaves untouched."
+    },
+    {
+      "type": "heading",
+      "text": "What Traditional Play Teaches"
+    },
+    {
+      "type": "paragraph", 
+      "text": "Unlike screen-based entertainment, traditional games offer:"
+    },
+    {
+      "type": "list",
+      "listType": "unordered",
+      "items": [
+        "<strong>Physical coordination:</strong> Every throw, catch, and run builds motor skills",
+        "<strong>Social intelligence:</strong> Negotiating rules, taking turns, resolving conflicts",
+        "<strong>Emotional resilience:</strong> Learning to lose gracefully and celebrate fairly",
+        "<strong>Cultural connection:</strong> Understanding the wisdom embedded in ancestral practices",
+        "<strong>Nature awareness:</strong> Using natural materials and outdoor spaces"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "../assets/gallery/playtime-img-3.jpeg",
+      "alt": "Children playing traditional games",
+      "caption": "Traditional games build both physical and social skills naturally"
+    },
+    {
+      "type": "heading",
+      "text": "The Science Behind the Magic"
+    },
+    {
+      "type": "paragraph",
+      "text": "Recent research shows that traditional play activities stimulate multiple areas of the brain simultaneously, creating neural pathways that support:"
+    },
+    {
+      "type": "list",
+      "listType": "ordered",
+      "items": [
+        "Creative problem-solving",
+        "Spatial awareness", 
+        "Mathematical thinking",
+        "Language development",
+        "Emotional regulation"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "When a child carefully balances stones to build a tower or strategizes in a game of <em>kho-kho</em>, they're not just playing – they're developing skills that will serve them throughout life."
+    },
+    {
+      "type": "heading",
+      "text": "Bringing It Home"
+    },
+    {
+      "type": "paragraph",
+      "text": "You don't need special equipment or elaborate setups. Start with simple activities like:"
+    },
+    {
+      "type": "list", 
+      "listType": "unordered",
+      "items": [
+        "Building with natural materials (stones, sticks, leaves)",
+        "Traditional singing games and rhymes",
+        "Seasonal celebration activities", 
+        "Simple cooking and crafting together"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The goal isn't perfection – it's connection. Connection to heritage, to nature, and to the simple joy of being present in the moment."
+    }
+  ],
+  "relatedArticles": ["unlearning-usual", "nature-connection", "cultural-heritage"]
+}

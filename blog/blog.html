@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#5E8C2C">
+  <title>Back To Roots - Blogs</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600..800&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="../index.html">
+        <img src="../assets/icons/logo-C0GJMs8s.jpeg" alt="Back to Roots Logo" style="height: 50px; vertical-align: middle;">
+        <span>Back to Roots</span>
+      </a>
+      <button class="nav__menu-button" aria-label="Toggle menu">
+        <span class="nav__menu-icon"></span>
+      </button>
+      <div class="nav__links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#programs">Programs</a>
+        <a href="../index.html#gallery">Gallery</a>
+        <a href="../index.html#stories">Testimonials</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20intereseted%20in%20your%20program.%20Please%20get%20me%20more%20information%20on%20this." target="_blank" class="nav__cta">Join Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main">
+    <!-- Blog Header -->
+    <section class="blog-header">
+      <div class="blog-header__inner">
+        <h1 class="blog-header__title">B2R Blogs</h1>
+        <p class="blog-header__subtitle">Know more about Back to Roots</p>
+      </div>
+    </section>
+
+    <!-- Article View (Initially Hidden) -->
+    <article class="article-view" id="articleView" style="display: none;">
+      <div class="article-view__inner">
+        <button class="article-back-btn" id="backBtn">
+          <span class="article-back-icon">←</span>
+          BACK
+        </button>
+        
+        <div class="article-content">
+          <h1 class="article-title" id="articleTitle">Loading...</h1>
+          <p class="article-subtitle" id="articleSubtitle"></p>
+          <div class="article-meta">
+            <p class="article-author" id="articleAuthor"></p>
+            <p class="article-date" id="articleDate"></p>
+            <p class="article-read-time" id="articleReadTime"></p>
+          </div>
+          
+          <div class="article-image-container">
+            <img src="" alt="Article Image" id="articleImage" class="article-main-image">
+          </div>
+          
+          <div class="article-body" id="articleBody">
+            <!-- Content will be dynamically loaded from JSON -->
+          </div>
+        </div>
+        </div>
+        
+        <!-- Related Articles -->
+        <section class="related-articles">
+          <h3 class="related-articles__title">More Blogs You Might Like</h3>
+          <div class="related-articles__grid" id="relatedArticlesGrid">
+            <!-- Related articles will be dynamically loaded -->
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- Blog Categories -->
+   <!--  <section class="blog-categories">
+      <div class="blog-categories__inner">
+        <div class="blog-categories__scroll">
+          <button class="blog-category active" data-category="all">All</button>
+          <button class="blog-category" data-category="workshops">Workshops</button>
+          <button class="blog-category" data-category="nep">NEP</button>
+          <button class="blog-category" data-category="emotionalwellbeing">Emotional Wellbeing</button>
+      </div>
+    </section> -->
+
+    <!-- Blog Grid -->
+    <section class="blog-grid">
+      <div class="blog-grid__inner">
+        <!-- Row 1 -->
+        <div class="blog-row">
+          <article class="blog-card blog-card--featured">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/1.JPG" alt="The Fresh Ubtan Guide" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Unlearning the Usual: Breaking Free from the Routine of a Child</h3>
+              <p class="blog-card__excerpt">Every morning, the rhythm is the same.
+ Wake up → school → tuition → music class → gymnastics → dance → homework → sleep.</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+
+          <article class="blog-card blog-card--featured">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/2.JPG" alt="Face the Calm: Ancient Oiling Meets Modern Skin Science" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Face the Calm: Ancient Oiling Meets Modern Skin Science</h3>
+              <p class="blog-card__excerpt">Discover the perfect blend of traditional wisdom and contemporary skincare</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="blog-row">
+          <article class="blog-card blog-card--featured">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/3.JPG" alt="Ubtan: Where Ancient Wisdom Meets Skin Science" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Ubtan: Where Ancient Wisdom Meets Skin Science</h3>
+              <p class="blog-card__excerpt">Unlocking the Science of a 5000-Year-Old Ritual</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+
+          <article class="blog-card blog-card--featured">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/4.JPG" alt="Weather or Not: Your Skin Needs a Change!" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Weather or Not: Your Skin Needs a Change!</h3>
+              <p class="blog-card__excerpt">Adapting your skincare routine to seasonal changes for optimal results</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Additional Blog Posts -->
+        <div class="blog-row">
+          <article class="blog-card">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/playtime-img-2.jpeg" alt="Natural Skincare Tips" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Natural Skincare for Kids</h3>
+              <p class="blog-card__excerpt">Gentle, natural solutions for your child's delicate skin</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/playtime-img-3.jpeg" alt="Ayurvedic Hair Care" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Ayurvedic Hair Care Secrets</h3>
+              <p class="blog-card__excerpt">Traditional remedies for healthy, lustrous hair</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="blog-row">
+          <article class="blog-card">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/farmvisit3a.jpg" alt="Monsoon Skincare" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Monsoon Skincare Essentials</h3>
+              <p class="blog-card__excerpt">Protect and nourish your skin during the rainy season</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card__image">
+              <img src="../assets/gallery/8.jpeg" alt="Winter Wellness" loading="lazy">
+            </div>
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">Winter Wellness Rituals</h3>
+              <p class="blog-card__excerpt">Keep your skin healthy and hydrated through winter</p>
+              <a href="#" class="blog-card__link">Read more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand-section">
+        <a href="../index.html" class="footer__brand">
+          <img src="../assets/icons/logo-C0GJMs8s.jpeg" alt="Back to Roots Logo" style="height: 40px; vertical-align: middle; border-radius: 20px;"> 
+          Back to Roots
+        </a>
+        <p class="footer__tagline">Rekindle the Joy of Childhood, the native way</p>
+      </div>
+
+      <div class="footer__links-section">
+        <h3 class="footer__heading">Quick Links</h3>
+        <ul class="footer__links">
+          <li><a href="../index.html#about">About Us</a></li>
+          <li><a href="../index.html#programs">Programs</a></li>
+          <li><a href="../index.html#gallery">Gallery</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="blog.html">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__connect-section">
+        <h3 class="footer__heading">Connect With Us</h3>
+        <p style="color: #D4B594; margin-bottom: 16px;">Join our community of nature loving families</p>
+        <div class="footer__social">
+          <a href="https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20intereseted%20in%20your%20program.%20Please%20get%20me%20more%20information%20on%20this." target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="WhatsApp">
+            <img src="../assets/icons/whatsapp.png" alt="WhatsApp" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61578203056668" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook">
+            <img src="../assets/icons/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/backtoroots.kids" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+            <img src="../assets/icons/instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://www.threads.net/@backtoroots.kids" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Threads">
+            <img src="../assets/icons/threads.png" alt="Threads" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__copyright">
+        © 2025 Back to Roots. Made with <span class="footer__heart">❤️</span> for childhood magic.
+      </div>
+    </div>
+  </footer>
+
+  <script src="blog.js"></script>
+</body>
+</html>
