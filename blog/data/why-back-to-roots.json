@@ -23,6 +23,7 @@
       "description": "Back to Roots is a gentle reminder for families to slow down, embrace simple joys, and prioritize meaningful experiences over screens or over-scheduled routines."
     }
   ],
+  "image": "../assets/icons/logo-C0GJMs8s.jpeg",
   "why_the_name_fits": {
     "meaning": [
       "It says what we do: Bring children closer to nature and tradition.",
@@ -30,5 +31,6 @@
       "It says why we do it: To nurture strong, joyful, and grounded children."
     ]
   },
+  "relatedArticles": ["glimpse-of-90s-childhood", "slow-down-emotional-wellbeing"],
   "closing_note": "Back to Roots creates memories, builds values, and nurtures the kind of childhood that lasts a lifetime."
 }

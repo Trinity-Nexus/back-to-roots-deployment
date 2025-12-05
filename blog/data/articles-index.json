@@ -1,9 +1,9 @@
 {
   "articles": [
     {
-      "id": "unlearning-usual",
-      "title": "Unlearning the Usual: Breaking Free from the Routine of a Child",
-      "excerpt": "Every morning, the rhythm is the same. Wake up → school → tuition → music class → gymnastics → dance → homework → sleep.",
+      "id": "glimpse-of-90s-childhood",
+      "title": "A Glimpse of Childhood in the ’90s: Memories That Shaped Us",
+      "excerpt": "For millennials, childhood in the ’90s was a world away from today’s screens, apps, and constant notifications.",
       "image": "../assets/gallery/1.JPG",
       "category": "childhood",
       "featured": true,
@@ -11,73 +11,23 @@
       "readTime": "5 min read"
     },
     {
-      "id": "childhood-wisdom",
-      "title": "Rediscovering Childhood Wisdom: Why Traditional Play Matters",
-      "excerpt": "In a world of digital entertainment, the ancient art of traditional play holds secrets to holistic child development.",
-      "image": "../assets/gallery/2.JPG",
+      "id": "why-back-to-roots",
+      "title": "Why Back to Roots is the Perfect Name for Our Program",
+      "excerpt": "Modern childhood is filled with school, tuitions, gadgets, and structured activities. Back to Roots focuses on restoring simple joys—nature, play, and cultural connection.",
+      "image": "../assets/icons/logo-C0GJMs8s.jpeg",
       "category": "traditional-play",
       "featured": true,
       "publishDate": "2024-11-18",
       "readTime": "6 min read"
     },
     {
-      "id": "nature-connection",
-      "title": "Building Nature Connection: Why Children Need Outdoor Experiences",
-      "excerpt": "Understanding the profound impact of nature on child development and well-being.",
-      "image": "../assets/gallery/3.JPG",
+      "id": "slow-down-emotional-wellbeing",
+      "title": "Slow Down: A Gift for Your Child’s Emotional Well-Being",
+      "excerpt": "Modern childhood often feels rushed—school, tuitions, activities, homework, and screen time. Children need space to breathe, wander, and simply be. Slowing down gives them time to notice, feel, and connect.",
+      "image": "../assets/photos/toy-2.JPG",
       "category": "nature",
       "featured": true,
       "publishDate": "2024-11-15",
-      "readTime": "4 min read"
-    },
-    {
-      "id": "emotional-wellbeing",
-      "title": "Emotional Wellbeing Through Creative Expression",
-      "excerpt": "How creative activities help children process emotions and build resilience.",
-      "image": "../assets/gallery/4.JPG",
-      "category": "emotional-wellbeing",
-      "featured": true,
-      "publishDate": "2024-11-12",
-      "readTime": "5 min read"
-    },
-    {
-      "id": "seasonal-learning",
-      "title": "Seasonal Learning: Adapting Education to Nature's Rhythms",
-      "excerpt": "How seasonal awareness enhances learning and connection to natural cycles.",
-      "image": "../assets/gallery/playtime-img-2.jpeg",
-      "category": "education",
-      "featured": false,
-      "publishDate": "2024-11-10",
-      "readTime": "4 min read"
-    },
-    {
-      "id": "mindful-parenting",
-      "title": "Mindful Parenting in a Fast-Paced World",
-      "excerpt": "Strategies for slowing down and being present with your children.",
-      "image": "../assets/gallery/playtime-img-3.jpeg",
-      "category": "parenting",
-      "featured": false,
-      "publishDate": "2024-11-08",
-      "readTime": "6 min read"
-    },
-    {
-      "id": "cultural-heritage",
-      "title": "Preserving Cultural Heritage Through Child-Friendly Activities",
-      "excerpt": "Keeping traditions alive through engaging, age-appropriate experiences.",
-      "image": "../assets/gallery/farmvisit3a.jpg",
-      "category": "culture",
-      "featured": false,
-      "publishDate": "2024-11-05",
-      "readTime": "5 min read"
-    },
-    {
-      "id": "community-building",
-      "title": "Building Community Through Shared Childhood Experiences",
-      "excerpt": "How group activities create lasting bonds and social skills.",
-      "image": "../assets/gallery/8.jpeg",
-      "category": "community",
-      "featured": false,
-      "publishDate": "2024-11-02",
       "readTime": "4 min read"
     }
   ]

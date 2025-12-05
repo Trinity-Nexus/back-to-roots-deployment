@@ -838,6 +838,56 @@ function initializeProgramsCarousel() {
   }
 }
 
+// Seeds of Wonder carousel initialization function
+function initializeSeedsCarousel() {
+  const carousel = document.getElementById('seedsCarousel');
+  if (!carousel) return;
+  
+  const items = Array.from(carousel.querySelectorAll('.seed-item'));
+  let current = 0;
+  let timer = null;
+  const interval = 4000; // 4 seconds for longer reading time
+
+  function show(index) {
+    items.forEach((item, i) => {
+      item.classList.remove('active', 'prev');
+      if (i === index) {
+        item.classList.add('active');
+      } else if (i === (index - 1 + items.length) % items.length) {
+        item.classList.add('prev');
+      }
+    });
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(() => {
+      current = (current + 1) % items.length;
+      show(current);
+    }, interval);
+  }
+
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  // Initialize
+  if (items.length > 0) {
+    console.log('Initializing seeds carousel with', items.length, 'items');
+    // Ensure all items start in correct state
+    items.forEach(item => {
+      item.classList.remove('active', 'prev');
+    });
+    show(0);
+    start();
+  } else {
+    console.log('No seed items found');
+  }
+}
+
 // Testimonial carousel
 (function() {
   const carousel = document.getElementById('testimonialCarousel');
@@ -878,6 +928,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load programs on the main page
     if (document.getElementById('programsCarousel')) {
       loadPrograms();
+    }
+    
+    // Initialize seeds carousel
+    if (document.getElementById('seedsCarousel')) {
+      console.log('Seeds carousel element found, initializing...');
+      initializeSeedsCarousel();
     }
     
     // Check if this is a program page by looking for program elements

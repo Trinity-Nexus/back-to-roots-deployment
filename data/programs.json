@@ -1,6 +1,60 @@
 {
   "programs": [
     {
+      "id": "chowka-baara-play-date",
+      "icon": "🪔",
+      "title": "Chowka Baara Play Date",
+      "ageGroup": "Ages 6-15",
+      "price": "Rs 399",
+      "description": "Make a traditional Chowka Baara board and learn to play this classic game with friends and family!",
+      "url": "./programs/program.html?prgm=chowka-baara-play-date"
+    },
+    {
+      "id": "chotta-bheem-play-date",
+      "icon": "🪔",
+      "title": "Chotta Bheem Play Date",
+      "ageGroup": "Ages 4-7",
+      "price": "Rs 500",
+      "description": "Get ready for a dhamakedaar Chhota Bheem play date full of fun, friendship, and adventure!",
+      "url": "./programs/program.html?prgm=chotta-bheem-play-date"
+    },
+    {
+      "id": "origami-craft",
+      "icon": "🪔",
+      "title": "Origami Craft",
+      "ageGroup": "Ages 2-8",
+      "price": "Rs 500",
+      "description": "Watch imagination take shape—one fold at a time with origami crafts!",
+      "url": "./programs/program.html?prgm=origami-craft"
+    },
+    {
+      "id": "leafy-creations",
+      "icon": "🪔",
+      "title": "Leafy Creations",
+      "ageGroup": "Ages 2-10",
+      "price": "Rs 500",
+      "description": "Turning simple leaves into beautiful, nature-inspired creations.",
+      "url": "./programs/program.html?prgm=leafy-creations"
+    },
+    {
+      "id": "whimsical-world-words-jars",
+      "icon": "🪔",
+      "title": "Whismical World - Words & Jars",
+      "ageGroup": "Ages 2-10",
+      "price": "Rs 500",
+      "description": "Capturing imagination in little jars of wonder.",
+      "url": "./programs/program.html?prgm=whimsical-world-words-jars"
+    },
+    {
+      "id": "my-first-pot",
+      "icon": "🪔",
+      "title": "My first pot",
+      "ageGroup": "Ages 2-10",
+      "price": "Rs 500",
+      "description": "Shaping imagination—one pot at a time.",
+      "url": "./programs/program.html?prgm=my-first-pot"
+    },
+    {
       "id": "dasara-play-date",
       "icon": "🪔",
       "title": "Dasara Play Mela",
