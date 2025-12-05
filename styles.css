@@ -608,6 +608,119 @@ body:not(.menu-open) .main-content {
 .pill--age { background: #A5D3EA; color: #134B68; }
 .p-card__desc { color: #6b6b6b; line-height: 1.9; font-size: 16px; max-width: 630px; }
 .p-card__cta { display: inline-block; margin-top: 16px; background: #6E9F2E; color: #fff; text-decoration: none; font-weight: 800; border-radius: 9999px; padding: 12px 18px; box-shadow: 0 10px 24px rgba(110,159,46,0.2); }
+
+/* Programs carousel - single item sliding */
+.programs__carousel { 
+  position: relative; 
+  width: 100%; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 400px;
+}
+.programs__carousel .program-item { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all 0.6s ease-in-out;
+  min-height: 400px;
+}
+.programs__carousel .program-item.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  min-height: 400px;
+}
+.programs__carousel .program-item.prev {
+  transform: translateX(-100%);
+  min-height: 400px;
+}
+.programs__carousel .program-item .p-card { 
+  max-width: 100%; 
+  box-shadow: 0 20px 44px rgba(0,0,0,0.06); 
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .programs__carousel { 
+    max-width: 100%; 
+    margin: 0 auto;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .programs__carousel { max-width: 100%; min-height: 500px; }
+}
+
+/* Programs indicators */
+.programs__indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(140, 78, 29, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.indicator:hover {
+  background: rgba(140, 78, 29, 0.6);
+  transform: scale(1.2);
+}
+.indicator.active {
+  background: #8C4E1D;
+  transform: scale(1.1);
+}
+
+/* View all programs button */
+.programs__view-all { 
+  text-align: center; 
+  margin-top: 24px; 
+}
+
+/* Programs page specific styles */
+.programs-page { 
+  background: linear-gradient(180deg, #FFF9E9 0%, #FFF5DD 60%, #FFF8E8 100%); 
+  padding: 48px 24px 72px; 
+  min-height: calc(100vh - 60px);
+}
+.programs-page__inner { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+.programs-page__header { 
+  text-align: center; 
+  margin-bottom: 48px; 
+}
+.programs-page__title { 
+  font-family: 'Kalam', 'Caveat', 'Amatic SC', Inter, system-ui, sans-serif; 
+  font-size: 42px; 
+  color: #8C4E1D; 
+  margin: 0 0 16px; 
+  font-weight: 700; 
+}
+.programs-page__subtitle { 
+  color: #6b6b6b; 
+  font-size: 18px; 
+  line-height: 1.8; 
+  margin: 0 auto; 
+  max-width: 800px; 
+}
+.programs-page__back { 
+  text-align: center; 
+  margin-top: 48px; 
+}
 .p-card__cta:hover { background: #648F29; }
 
 /* Gallery section */

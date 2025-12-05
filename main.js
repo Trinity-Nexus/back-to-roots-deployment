@@ -505,6 +505,70 @@ async function loadGalleryImages() {
   }, 500);
 }
 
+// Programs carousel - horizontal sliding
+function initProgramsCarousel() {
+  const carousel = document.getElementById('programsCarousel');
+  const track = document.getElementById('programsCarouselTrack');
+  if (!carousel || !track) {
+    console.log('Programs carousel or track not found');
+    return;
+  }
+  
+  const items = Array.from(carousel.querySelectorAll('.program-item'));
+  const indicators = document.getElementById('programsIndicators');
+  const indicatorDots = indicators ? indicators.querySelectorAll('.indicator') : [];
+  
+  console.log('Programs carousel found:', items.length, 'items');
+  
+  let current = 0;
+  let timer = null;
+  const interval = 2000; // 2 seconds
+
+  function show(index) {
+    console.log('Sliding to program:', index);
+    // Move the track to show the selected item
+    const translateX = -index * 100; // Each item is 100% wide
+    track.style.transform = `translateX(${translateX}%)`;
+    
+    // Update indicators
+    indicatorDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(() => {
+      current = (current + 1) % items.length;
+      show(current);
+    }, interval);
+  }
+
+  function stop() { 
+    if (timer) { 
+      clearInterval(timer); 
+      timer = null; 
+    } 
+  }
+
+  // Add click handlers to indicators
+  indicatorDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      current = index;
+      show(current);
+      stop();
+      setTimeout(start, 3000); // Restart after 3 seconds
+    });
+  });
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  // initialize
+  show(0);
+  start();
+}
+
 // Navigation/menu logic
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -575,6 +639,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadGalleryImages();
   }, 10);
   
+  // Initialize programs carousel
+  initProgramsCarousel();
+  
   // Debug log
   console.log('Navigation initialized');
 });
@@ -623,6 +690,154 @@ function initPhotoStripMarquee() {
   requestAnimationFrame(step);
 }
 
+// Load and render programs from JSON
+async function loadPrograms() {
+  try {
+    const response = await fetch('./data/programs.json');
+    if (!response.ok) {
+      throw new Error(`Failed to load programs: ${response.status}`);
+    }
+    const data = await response.json();
+    renderPrograms(data.programs);
+    initializeProgramsCarousel();
+  } catch (error) {
+    console.error('Error loading programs:', error);
+    // Fallback to hardcoded data if JSON fails to load
+    const fallbackPrograms = [
+      {
+        "id": "dasara-play-date",
+        "icon": "🪔",
+        "title": "Dasara Play Mela",
+        "ageGroup": "Ages 6-15",
+        "description": "This Dasara, let kids discover the joy of tradition at Back to Roots! Fun games, creative crafts, and festive treats.",
+        "url": "./programs/program.html?prgm=dasara-play-date"
+      },
+      {
+        "id": "grains-games-gratitude",
+        "icon": "🦋",
+        "title": "Grains, Games & Gratitude",
+        "ageGroup": "Ages 7-12",
+        "description": "Create, learn, play, and give back! From crafting mandala art with millets to discovering their nutritional power, enjoying Lagori, and making a heartfelt gratitude card—this journey is all about creativity, tradition, and joy.",
+        "url": "./programs/program.html?prgm=grains-games-gratitude"
+      },
+      {
+        "id": "ajjis-courtyard-adventures",
+        "icon": "🌳",
+        "title": "Ajji's Courtyard Adventures",
+        "ageGroup": "Ages 4-12",
+        "description": "Step into a world of mud pies, games, seeds & stories just like Ajji's good old days! Craft, plant & play the natural way – at our Courtyard",
+        "url": "./programs/program.html?prgm=ajjis-courtyard-adventures"
+      },
+      {
+        "id": "ajjas-earth-warriors",
+        "icon": "🦋",
+        "title": "Ajja's Earth Warriors",
+        "ageGroup": "Ages 7-12",
+        "description": "Become a guardian of the earth! Join Ajja's Earth Warriors to learn about composting along with lots of other outdoor fun of his times.",
+        "url": "./programs/program.html?prgm=ajjas-earth-warriors"
+      }
+    ];
+    renderPrograms(fallbackPrograms);
+    initializeProgramsCarousel();
+  }
+}
+
+// Render programs HTML from data
+function renderPrograms(programs) {
+  const carousel = document.getElementById('programsCarousel');
+  const indicators = document.getElementById('programsIndicators');
+  
+  if (!carousel || !indicators) return;
+  
+  // Clear existing content
+  carousel.innerHTML = '';
+  indicators.innerHTML = '';
+  
+  // Generate program items
+  programs.forEach((program, index) => {
+    // Create program item
+    const programItem = document.createElement('div');
+    programItem.className = 'program-item';
+    programItem.innerHTML = `
+      <div class="p-card">
+        <div class="p-card__icon">${program.icon}</div>
+        <h3 class="p-card__title">${program.title}</h3>
+        <div class="p-card__pills">
+          <span class="pill pill--age">${program.ageGroup}</span>
+          ${program.price ? `<span class="pill pill--price">${program.price}</span>` : ''}
+        </div>
+        <p class="p-card__desc">${program.description}</p>
+        <a href="${program.url}" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
+      </div>
+    `;
+    carousel.appendChild(programItem);
+    
+    // Create indicator
+    const indicator = document.createElement('span');
+    indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
+    indicators.appendChild(indicator);
+  });
+}
+
+// Initialize programs carousel after content is loaded
+function initializeProgramsCarousel() {
+  const carousel = document.getElementById('programsCarousel');
+  if (!carousel) return;
+  
+  const items = Array.from(carousel.querySelectorAll('.program-item'));
+  const indicators = Array.from(document.querySelectorAll('#programsIndicators .indicator'));
+  let current = 0;
+  let timer = null;
+  const interval = 2000; // 2 seconds
+
+  function show(index) {
+    items.forEach((item, i) => {
+      item.classList.remove('active', 'prev');
+      if (i === index) {
+        item.classList.add('active');
+      } else if (i === (index - 1 + items.length) % items.length) {
+        item.classList.add('prev');
+      }
+    });
+    
+    // Update indicators
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle('active', i === index);
+    });
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(() => {
+      current = (current + 1) % items.length;
+      show(current);
+    }, interval);
+  }
+
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  // Add click handlers for indicators
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      current = index;
+      show(current);
+      stop();
+      start(); // Restart timer
+    });
+  });
+
+  // initialize
+  if (items.length > 0) {
+    show(0);
+    start();
+  }
+}
+
 // Testimonial carousel
 (function() {
   const carousel = document.getElementById('testimonialCarousel');
@@ -660,6 +875,11 @@ function initPhotoStripMarquee() {
 // Auto-load program content from JSON if this is a program page
 document.addEventListener('DOMContentLoaded', () => {
   try {
+    // Load programs on the main page
+    if (document.getElementById('programsCarousel')) {
+      loadPrograms();
+    }
+    
     // Check if this is a program page by looking for program elements
     const programTitle = document.querySelector('#program-title');
     const isProgramPage = programTitle !== null;
