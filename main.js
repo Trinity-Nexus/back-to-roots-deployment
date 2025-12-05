@@ -438,6 +438,73 @@ async function populateProgramPage(jsonFilePath) {
   }
 }
 
+// Gallery images loading function
+async function loadGalleryImages() {
+  const galleryImages = [
+    '1.JPG',
+    '20.jpg',
+    '2.JPG', 
+    '39.JPG',
+    '15.jpg',
+    '4.JPG',
+    '8.jpeg',
+    '19.jpg',
+    'farmvisit3a.jpg',
+    '39.jpg',
+    'playtime-img-2.jpeg',
+    '8.jpg',
+    'playtime-img-3.jpeg',
+    '10.jpg',
+    'top-impage.jpeg'
+  ];
+
+  // Image descriptions mapping
+  const imageDescriptions = {
+    '1.JPG': 'Homerooms - learning space',
+    '2.JPG': 'Art studio', 
+    '3.JPG': 'Play area slide',
+    '4.JPG': 'Play area slide',
+    '8.jpeg': 'Outdoor discovery',
+    'farmvisit3a.jpg': 'Farm visit experience',
+    'playtime-img-2.jpeg': 'Sand pit play',
+    'playtime-img-3.jpeg': 'Makerspace activities',
+    'top-impage.jpeg': 'Outdoor activities'
+  };
+
+  const photoStrip = document.getElementById('photoStrip');
+  if (!photoStrip) {
+    console.warn('Photo strip container not found');
+    return;
+  }
+
+  // Clear existing content
+  photoStrip.innerHTML = '';
+
+  // Create and append photo cards for each image
+  galleryImages.forEach((imageName) => {
+    const figure = document.createElement('figure');
+    figure.className = 'photo-card';
+    
+    const img = document.createElement('img');
+    img.src = `./assets/gallery/${imageName}`;
+    img.alt = imageDescriptions[imageName] || 'Back to Roots activity';
+    
+    // Add error handling for images that might not load
+    img.onerror = function() {
+      console.warn(`Failed to load image: ${imageName}`);
+      this.style.display = 'none';
+    };
+    
+    figure.appendChild(img);
+    photoStrip.appendChild(figure);
+  });
+
+  // Initialize marquee after images are loaded
+  setTimeout(() => {
+    initPhotoStripMarquee();
+  }, 500);
+}
+
 // Navigation/menu logic
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -503,14 +570,21 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScroll = currentScroll;
   });
   
+  // Load gallery images after a short delay to ensure DOM is ready
+  setTimeout(() => {
+    loadGalleryImages();
+  }, 10);
+  
   // Debug log
   console.log('Navigation initialized');
 });
 
-// Photo strip marquee
-(function() {
+// Photo strip marquee function
+function initPhotoStripMarquee() {
   const strip = document.getElementById('photoStrip');
-  if (!strip) return;
+  if (!strip) {
+    return;
+  }
 
   // Wrap existing items into a rail element for duplication
   const rail = document.createElement('div');
@@ -538,12 +612,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lastTime = timestamp;
     pos += speed * delta;
 
-    // When pos exceeds width of first rail, wrap
-   /*  const railWidth = rail.scrollWidth;
-    if (pos >= railWidth) {
-      pos -= railWidth;
-    } */
-
     strip.scrollLeft = Math.floor(pos);
     requestAnimationFrame(step);
   }
@@ -553,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // start animation
   requestAnimationFrame(step);
-})();
+}
 
 // Testimonial carousel
 (function() {
