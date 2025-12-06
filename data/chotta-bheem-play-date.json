@@ -6,7 +6,7 @@
     "age": "Ages 4-7",
     "price": "Rs 500",
     "description": "Embark on action-packed adventures inspired by our beloved Chhota Bheem's world of courage and friendship. Engage in traditional Indian games, storytelling, and creative activities that build character and confidence.",
-    "imagePath": "../assets/events/Chhota_bheem.jpg",
+    "imagePath": "../assets/events/Chhota_Bheem.jpg",
     "imageAlt": "Children enjoying Chotta Bheem themed activities"
   },
   "experience": {
