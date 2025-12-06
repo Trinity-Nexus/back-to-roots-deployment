@@ -1,26 +1,46 @@
 {
   "title": "Why Back to Roots is the Perfect Name for Our Program",
   "introduction": "Modern childhood is filled with school, tuitions, gadgets, and structured activities. Back to Roots focuses on restoring simple joys—nature, play, and cultural connection.",
-  "core_sections": [
+  "content": [
     {
-      "heading": "Childhood Memories Revisited 🌱",
-      "description": "Back to Roots revives the childhood experiences we cherished—running barefoot, crafting with grandparents, building twig forts, and playing folk games. These activities nurture creativity, teamwork, patience, and resilience."
+      "type": "heading",
+      "text": "Childhood Memories Revisited 🌱"
     },
     {
-      "heading": "Connecting with Nature 🌿",
-      "description": "Roots symbolize strong, nurturing connections with nature. Back to Roots encourages children to explore natural materials like leaves, flowers, shells, cotton, twigs, and pebbles, strengthening sensory development, creativity, and appreciation for simplicity."
+      "type": "paragraph",
+      "text": "Back to Roots revives the childhood experiences we cherished—running barefoot, crafting with grandparents, building twig forts, and playing folk games. These activities nurture creativity, teamwork, patience, and resilience."
     },
     {
-      "heading": "Holding onto Cultural Roots 🌸",
-      "description": "Roots also represent heritage, stories, and traditions. Through folk games, storytelling, and crafts, Back to Roots helps children rediscover cultural wisdom as joyful, hands-on experiences."
+      "type": "heading",
+      "text": "Connecting with Nature 🌿"
     },
     {
-      "heading": "Nourishment for Growth 🌳",
-      "description": "Just like roots nourish a tree, natural play and cultural connection nourish a child's emotional, cognitive, and social development. These experiences build imagination, empathy, balance, and strong inner foundations."
+      "type": "paragraph",
+      "text": "Roots symbolize strong, nurturing connections with nature. Back to Roots encourages children to explore natural materials like leaves, flowers, shells, cotton, twigs, and pebbles, strengthening sensory development, creativity, and appreciation for simplicity."
     },
     {
-      "heading": "A Reminder for Families Too 🌼",
-      "description": "Back to Roots is a gentle reminder for families to slow down, embrace simple joys, and prioritize meaningful experiences over screens or over-scheduled routines."
+      "type": "heading",
+      "text": "Holding onto Cultural Roots 🌸"
+    },
+    {
+      "type": "paragraph",
+      "text": "Roots also represent heritage, stories, and traditions. Through folk games, storytelling, and crafts, Back to Roots helps children rediscover cultural wisdom as joyful, hands-on experiences."
+    },
+    {
+      "type": "heading",
+      "text": "Nourishment for Growth 🌳"
+    },
+    {
+      "type": "paragraph",
+      "text": "Just like roots nourish a tree, natural play and cultural connection nourish a child's emotional, cognitive, and social development. These experiences build imagination, empathy, balance, and strong inner foundations."
+    },
+    {
+      "type": "heading",
+      "text": "A Reminder for Families Too 🌼"
+    },
+    {
+      "type": "paragraph",
+      "text": "Back to Roots is a gentle reminder for families to slow down, embrace simple joys, and prioritize meaningful experiences over screens or over-scheduled routines."
     }
   ],
   "image": "../assets/icons/logo-C0GJMs8s.jpeg",

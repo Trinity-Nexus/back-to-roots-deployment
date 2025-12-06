@@ -105,22 +105,81 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Update article content
-        document.getElementById('articleTitle').textContent = article.title;
-        document.getElementById('articleSubtitle').textContent = article.subtitle;
-        document.getElementById('articleAuthor').textContent = `By ${article.author}`;
-        document.getElementById('articleDate').textContent = article.publishDate;
-        document.getElementById('articleReadTime').textContent = article.readTime;
-        document.getElementById('articleImage').src = article.image;
-        document.getElementById('articleImage').alt = article.title;
+        // Get article metadata from index
+        const articleMeta = articlesIndex.articles.find(a => a.id === articleId);
         
-        // Render content
-        const renderedContent = renderArticleContent(article.content);
+        // Update article content
+        document.getElementById('articleTitle').textContent = article.title || '';
+        document.getElementById('articleSubtitle').textContent = article.subtitle || '';
+        document.getElementById('articleAuthor').textContent = article.author ? `By ${article.author}` : 'By Back to Roots Team';
+        document.getElementById('articleDate').textContent = articleMeta ? formatDate(articleMeta.publishDate) : '';
+        document.getElementById('articleReadTime').textContent = articleMeta ? articleMeta.readTime : '';
+        document.getElementById('articleImage').src = articleMeta ? articleMeta.image : '../assets/icons/logo-C0GJMs8s.jpeg';
+        document.getElementById('articleImage').alt = article.title || '';
+        
+        // Render content based on article structure
+        let renderedContent = '';
+        
+        // Handle different article structures
+        if (article.content) {
+            renderedContent = renderArticleContent(article.content);
+        } else {
+            // Handle the current JSON structure
+            if (article.introduction) {
+                renderedContent += `<p class="article-intro">${article.introduction}</p>`;
+            }
+            
+            // Handle core_sections
+            if (article.core_sections) {
+                article.core_sections.forEach(section => {
+                    renderedContent += `
+                        <section class="article-section">
+                            <h3>${section.heading}</h3>
+                            <p>${section.description}</p>
+                        </section>
+                    `;
+                });
+            }
+            
+            // Handle other structured content
+            if (article.why_slowing_down_matters) {
+                renderedContent += '<section class="article-section"><h3>Why Slowing Down Matters</h3>';
+                Object.entries(article.why_slowing_down_matters).forEach(([key, value]) => {
+                    const heading = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    renderedContent += `<h4>${heading}</h4><p>${value}</p>`;
+                });
+                renderedContent += '</section>';
+            }
+            
+            // Handle why_the_name_fits
+            if (article.why_the_name_fits && article.why_the_name_fits.meaning) {
+                renderedContent += '<section class="article-section"><h3>Why The Name Fits</h3>';
+                article.why_the_name_fits.meaning.forEach(point => {
+                    renderedContent += `<p>• ${point}</p>`;
+                });
+                renderedContent += '</section>';
+            }
+            
+            // Handle b2r_message
+            if (article.b2r_message) {
+                renderedContent += `<section class="article-section"><h3>Our Message</h3><p>${article.b2r_message}</p></section>`;
+            }
+            
+            // Handle closing_note
+            if (article.closing_note) {
+                renderedContent += `<div class="article-closing"><p><em>${article.closing_note}</em></p></div>`;
+            }
+        }
+        
         document.getElementById('articleBody').innerHTML = renderedContent;
         
-        // Load related articles
-        if (article.relatedArticles) {
+        // Load related articles and show section
+        const relatedSection = document.querySelector('.related-articles');
+        if (article.relatedArticles && article.relatedArticles.length > 0) {
             await loadRelatedArticles(article.relatedArticles);
+            if (relatedSection) relatedSection.style.display = 'block';
+        } else {
+            if (relatedSection) relatedSection.style.display = 'none';
         }
         
         // Hide blog grid and show article
@@ -143,35 +202,97 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Render blog grid from articles data
+    function renderBlogGrid(articles) {
+        const blogGridInner = document.getElementById('blogGridInner');
+        if (!blogGridInner) {
+            console.error('blogGridInner element not found!');
+            return;
+        }
+
+        // Clear existing content
+        blogGridInner.innerHTML = '';
+
+        // Group articles into rows (2 articles per row)
+        const rows = [];
+        for (let i = 0; i < articles.length; i += 2) {
+            rows.push(articles.slice(i, i + 2));
+        }
+
+        // Create blog rows
+        rows.forEach(rowArticles => {
+            const blogRow = document.createElement('div');
+            blogRow.className = 'blog-row';
+
+            rowArticles.forEach(article => {
+                const articleCard = document.createElement('article');
+                articleCard.className = `blog-card ${article.featured ? 'blog-card--featured' : ''}`;
+                articleCard.innerHTML = `
+                    <div class="blog-card__image">
+                        <img src="${article.image}" alt="${article.title}" loading="lazy">
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">${article.title}</h3>
+                        <p class="blog-card__excerpt">${article.excerpt}</p>
+                        <div class="blog-card__meta">
+                            <span class="blog-card__date">${formatDate(article.publishDate)}</span>
+                            <span class="blog-card__read-time">${article.readTime}</span>
+                        </div>
+                        <a href="#" class="blog-card__link" data-article-id="${article.id}">Read more</a>
+                    </div>
+                `;
+                blogRow.appendChild(articleCard);
+            });
+
+            blogGridInner.appendChild(blogRow);
+        });
+
+        // Add click handlers to all "Read more" links
+        addBlogCardClickHandlers();
+    }
+
+    // Format date for display
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
+
+    // Add click handlers to blog cards
+    function addBlogCardClickHandlers() {
+        const blogCardLinks = document.querySelectorAll('.blog-card__link');
+        blogCardLinks.forEach(link => {
+            link.addEventListener('click', handleBlogCardClick);
+        });
+    }
+
+    // Handle blog card click to load individual article
+    function handleBlogCardClick(event) {
+        event.preventDefault();
+        const articleId = event.target.getAttribute('data-article-id');
+        
+        if (!articleId) {
+            console.error('No article ID found');
+            return;
+        }
+        
+        showArticle(articleId);
+    }
+
+    // Initialize blog grid with articles from JSON
+    async function initializeBlogGrid() {
+        const articles = await loadArticlesIndex();
+        if (articles && articles.articles) {
+            console.log('Articles loaded:', articles.articles.length, 'articles');
+            renderBlogGrid(articles.articles);
+        } else {
+            console.error('Failed to load articles or articles.articles is missing');
+        }
+    }
+
     // Initialize the page
     async function init() {
-        await loadArticlesIndex();
-        
-        // Add click handlers to "Read more" links
-        blogCards.forEach((card, index) => {
-            const readMoreLink = card.querySelector('.blog-card__link');
-            if (readMoreLink) {
-                readMoreLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Map card titles to article IDs
-                    const title = card.querySelector('.blog-card__title').textContent;
-                    let articleId = 'unlearning-usual'; // Default
-                    
-                    if (title.includes('Unlearning the Usual')) {
-                        articleId = 'unlearning-usual';
-                    } else if (title.includes('Face the Calm')) {
-                        articleId = 'childhood-wisdom';
-                    } else if (title.includes('Ubtan')) {
-                        articleId = 'nature-connection';
-                    } else if (title.includes('Weather or Not')) {
-                        articleId = 'emotional-wellbeing';
-                    }
-                    
-                    showArticle(articleId);
-                });
-            }
-        });
+        await initializeBlogGrid();
     }
 
     // Back button functionality
