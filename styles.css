@@ -744,12 +744,12 @@ body:not(.menu-open) .main-content {
   .programs__carousel { 
     max-width: 100%; 
     margin: 0 auto;
-    min-height: 500px;
+    min-height: 520px;
   }
-}
-
-@media (max-width: 768px) {
-  .programs__carousel { max-width: 100%; min-height: 500px; }
+  
+  .programs__carousel .program-item .p-card {
+    padding-bottom: 32px;
+  }
 }
 
 /* Programs indicators */
@@ -758,6 +758,12 @@ body:not(.menu-open) .main-content {
   justify-content: center;
   gap: 8px;
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .programs__indicators {
+    margin-top: 32px;
+  }
 }
 .indicator {
   width: 8px;
@@ -997,8 +1003,8 @@ body:not(.menu-open) .main-content {
 
 @media (max-width: 599px) {
   .seeds-carousel {
-    min-height: 450px;
-    margin: 0 auto 20px;
+    min-height: 420px;
+    margin: 0 auto 24px;
   }
 }
 
@@ -1106,7 +1112,7 @@ body:not(.menu-open) .main-content {
   color: #6b4a1d;
   font-size: 16px;
   line-height: 1.7;
-  margin: 0;
+  margin: 0 0 8px;
   border-left: 5px solid #8C4E1D;
   font-style: italic;
   font-weight: 500;
@@ -1138,9 +1144,10 @@ body:not(.menu-open) .main-content {
 
 @media (max-width: 767px) {
   .seeds__title { font-size: 28px; }
-  .seed-card { padding: 24px 20px; margin: 0 8px; min-height: 520px; }
+  .seed-card { padding: 24px 20px; margin: 0 8px; min-height: 560px; }
   .seed-card__title { font-size: 20px; }
-  .seeds-carousel { min-height: 600px; }
+  .seed-card__reflection { margin-top: 16px; margin-bottom: 8px; }
+  .seeds-carousel { min-height: 640px; }
 }
 
 /* Stories/Testimonials section */
@@ -1444,6 +1451,11 @@ body:not(.menu-open) .main-content {
   .programs__grid { grid-template-columns: 1fr; }
   .p-card { padding: 24px 20px; }
   
+  /* Ensure carousel cards have proper spacing on mobile */
+  .programs__carousel .program-item .p-card {
+    padding-bottom: 28px;
+  }
+  
   .gallery { padding: 56px 20px 72px; }
   .gallery__title { font-size: 36px; }
   .gallery__grid { grid-template-columns: repeat(2, 1fr); }
@@ -1490,19 +1502,32 @@ body:not(.menu-open) .main-content {
   .seeds__title { font-size: 28px; }
   .seeds__title::after { right: -25px; font-size: 18px; }
   .seeds__subtitle { font-size: 16px; }
-  .seed-card { padding: 20px 16px; margin: 0 4px; max-height: 320px; }
+  .seed-card { padding: 20px 16px; margin: 0 4px; min-height: 380px; }
   .seed-card__icon { margin-bottom: 12px; }
   .seed-person-img { width: 50px; height: 50px; border-width: 2px; }
   .seed-card__title { font-size: 18px; margin-bottom: 12px; }
-  .seed-card__story { font-size: 14px; }
-  .seed-card__growth, .seed-card__reflection { font-size: 13px; padding: 10px 12px; }
+  .seed-card__story { font-size: 14px; margin-bottom: 12px; }
+  .seed-card__growth { font-size: 13px; padding: 10px 12px; margin-bottom: 8px; }
+  .seed-card__reflection { font-size: 13px; padding: 10px 12px; margin-bottom: 4px; }
   .seeds__closing { padding: 20px 16px; margin-top: 8px; margin-bottom: 0; }
   .seeds__closing-text { font-size: 15px; }
   
-  .programs { padding: 56px 16px 64px; margin-top: 24px; }
+  .programs { padding: 56px 16px 72px; margin-top: 24px; }
   .programs__title { font-size: 32px; margin-bottom: 16px; }
   .programs__subtitle { font-size: 16px; }
   .p-card__title { font-size: 26px; }
+  
+  .programs__carousel {
+    min-height: 540px;
+  }
+  
+  .programs__carousel .program-item .p-card {
+    padding-bottom: 36px;
+  }
+  
+  .programs__indicators {
+    margin-top: 40px;
+  }
   
   .gallery { padding: 48px 16px 64px; }
   .gallery__title { font-size: 32px; }
