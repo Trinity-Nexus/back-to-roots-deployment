@@ -2,61 +2,61 @@
   "programs": [
     {
       "id": "chowka-baara-play-date",
-      "icon": "🪔",
+      "icon": "🎲",
       "title": "Chowka Baara Play Date",
       "ageGroup": "Ages 6-15",
       "price": "Rs 399",
-      "description": "Make a traditional Chowka Baara board and learn to play this classic game with friends and family!",
+      "description": "Craft your own traditional Chowka Baara board using natural materials and ancient techniques. Experience the strategic gameplay that has entertained generations while connecting with India's rich gaming heritage.",
       "url": "./programs/program.html?prgm=chowka-baara-play-date"
     },
     {
       "id": "chotta-bheem-play-date",
-      "icon": "🪔",
+      "icon": "🦸",
       "title": "Chotta Bheem Play Date",
       "ageGroup": "Ages 4-7",
       "price": "Rs 500",
-      "description": "Get ready for a dhamakedaar Chhota Bheem play date full of fun, friendship, and adventure!",
+      "description": "Embark on action-packed adventures inspired by our beloved Chhota Bheem's world of courage and friendship. Engage in traditional Indian games, storytelling, and creative activities that build character and confidence.",
       "url": "./programs/program.html?prgm=chotta-bheem-play-date"
     },
     {
       "id": "origami-craft",
-      "icon": "🪔",
+      "icon": "📜",
       "title": "Origami Craft",
       "ageGroup": "Ages 2-8",
       "price": "Rs 500",
-      "description": "Watch imagination take shape—one fold at a time with origami crafts!",
+      "description": "Discover the meditative art of paper folding that enhances focus, patience, and fine motor skills. Create beautiful creatures and objects while learning about Japanese culture and the mindfulness behind each precise fold.",
       "url": "./programs/program.html?prgm=origami-craft"
     },
     {
       "id": "leafy-creations",
-      "icon": "🪔",
+      "icon": "🍃",
       "title": "Leafy Creations",
       "ageGroup": "Ages 2-10",
       "price": "Rs 500",
-      "description": "Turning simple leaves into beautiful, nature-inspired creations.",
+      "description": "Transform ordinary leaves into extraordinary art pieces through traditional eco-friendly crafting techniques. Connect with nature's beauty while developing creativity and environmental awareness through hands-on leaf art activities.",
       "url": "./programs/program.html?prgm=leafy-creations"
     },
     {
       "id": "whimsical-world-words-jars",
-      "icon": "🪔",
+      "icon": "🫙",
       "title": "Whismical World - Words & Jars",
       "ageGroup": "Ages 2-10",
       "price": "Rs 500",
-      "description": "Capturing imagination in little jars of wonder.",
+      "description": "Create magical storytelling jars filled with words, colors, and tiny treasures that spark imagination. Develop language skills and creative expression while building personal story collections in beautiful, handcrafted memory jars.",
       "url": "./programs/program.html?prgm=whimsical-world-words-jars"
     },
     {
       "id": "my-first-pot",
-      "icon": "🪔",
+      "icon": "🏺",
       "title": "My first pot",
       "ageGroup": "Ages 2-10",
       "price": "Rs 500",
-      "description": "Shaping imagination—one pot at a time.",
+      "description": "Experience the ancient art of pottery through hands-on clay work that connects children to traditional craftsmanship. Develop patience, creativity, and tactile skills while creating their very first functional pottery piece to treasure.",
       "url": "./programs/program.html?prgm=my-first-pot"
     },
     {
       "id": "dasara-play-date",
-      "icon": "🪔",
+      "icon": "🎪",
       "title": "Dasara Play Mela",
       "ageGroup": "Ages 6-15",
       "price": "Rs 500",

@@ -1,0 +1,75 @@
+{
+  "pageTitle": "My First Pot — Back to Roots",
+  "siteTitle": "Back to Roots",
+  "program": {
+    "title": "My First Pot",
+    "age": "Ages 2-10",
+    "price": "Rs 500",
+    "description": "Experience the ancient art of pottery through hands-on clay work that connects children to traditional craftsmanship. Develop patience, creativity, and tactile skills while creating their very first functional pottery piece to treasure.",
+    "imagePath": "../assets/events/my-first-pot.jpg",
+    "imageAlt": "Children creating their first pottery pieces"
+  },
+  "experience": {
+    "title": "What You'll Experience",
+    "items": [
+      {
+        "icon": "🏺",
+        "title": "Clay Introduction Circle",
+        "description": "Feel the magic of clay, learn about this ancient material, and discover how pottery has been part of human culture for thousands of years."
+      },
+      {
+        "icon": "👐",
+        "title": "Hand-Building Techniques",
+        "description": "Master basic pottery techniques like pinching, coiling, and shaping to create your very first functional pot using traditional methods."
+      },
+      {
+        "icon": "🎨",
+        "title": "Decoration & Painting",
+        "description": "Add personal touches to your pot with natural glazes, traditional patterns, and creative designs that reflect your unique personality."
+      },
+      {
+        "icon": "🔥",
+        "title": "Potter's Pride Ceremony",
+        "description": "Celebrate your creation in a special ceremony, learn about the firing process, and take home your very first handmade pottery piece."
+      }
+    ]
+  },
+  "buttons": {
+    "whatsapp": {
+      "text": "Join / Enquire on WhatsApp",
+      "url": "https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20interested%20in%20the%20My%20First%20Pot%20program.%20Please%20share%20details."
+    },
+    "programs": {
+      "text": "Back to Programs",
+      "url": "../index.html#programs"
+    }
+  },
+  "practicalInfo": {
+    "title": "Practical Info",
+    "items": [
+      {
+        "label": "Age group",
+        "value": "2 – 10 years"
+      },
+      {
+        "label": "Timing",
+        "value": "Morning sessions, 2.5 hours"
+      },
+      {
+        "label": "Fee",
+        "value": "Rs 500 per child"
+      },
+      {
+        "label": "What to bring",
+        "value": "Old clothes, apron, water bottle, towel"
+      },
+      {
+        "label": "Take home",
+        "value": "Handcrafted pottery piece, clay care guide, potter's certificate"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Back to Roots"
+  }
+}

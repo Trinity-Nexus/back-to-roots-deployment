@@ -63,50 +63,8 @@
           <p class="programs-page__subtitle">Discover all our engaging programs designed to suit different age groups and interests. Each program offers a unique blend of learning, creativity, and connection with nature.</p>
         </div>
 
-        <div class="programs__grid">
-          <div class="p-card">
-            <div class="p-card__icon">🪔</div>
-            <h3 class="p-card__title">Dasara Play Mela</h3>
-            <div class="p-card__pills">
-              <span class="pill pill--age">Ages 6-15</span>
-              <!-- <span class="pill pill--price">Rs 500</span> -->
-            </div>
-            <p class="p-card__desc">This Dasara, let kids discover the joy of tradition at Back to Roots! Fun games, creative crafts, and festive treats.</p>
-            <a href="../programs/program.html?prgm=dasara-play-date" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
-          </div>
-
-          <div class="p-card">
-            <div class="p-card__icon">🦋</div>
-            <h3 class="p-card__title">Grains, Games & Gratitude</h3>
-            <div class="p-card__pills">
-              <span class="pill pill--age">Ages 7-12</span>
-              <!-- <span class="pill pill--price">Rs 500</span> -->
-            </div>
-            <p class="p-card__desc">Create, learn, play, and give back! From crafting mandala art with millets to discovering their nutritional power, enjoying Lagori, and making a heartfelt gratitude card—this journey is all about creativity, tradition, and joy.</p>
-            <a href="../programs/program.html?prgm=grains-games-gratitude" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
-          </div>
-
-          <div class="p-card">
-            <div class="p-card__icon">🌳</div>
-            <h3 class="p-card__title">Ajji's Courtyard Adventures</h3>
-            <div class="p-card__pills">
-              <span class="pill pill--age">Ages 4-12</span>
-              <!-- <span class="pill pill--price">Rs 500</span> -->
-            </div>
-            <p class="p-card__desc">Step into a world of mud pies, games, seeds & stories just like Ajji's good old days! Craft, plant & play the natural way – at our Courtyard</p>
-            <a href="../programs/program.html?prgm=ajjis-courtyard-adventures" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
-          </div>
-          
-          <div class="p-card">
-            <div class="p-card__icon">🦋</div>
-            <h3 class="p-card__title">Ajja's Earth Warriors</h3>
-            <div class="p-card__pills">
-              <span class="pill pill--age">Ages 7-12</span>
-              <!-- <span class="pill pill--price">Rs 600</span> -->
-            </div>
-            <p class="p-card__desc">Become a guardian of the earth! Join Ajja's Earth Warriors to learn about composting along with lots of other outdoor fun of his times.</p>
-            <a href="../programs/program.html?prgm=ajjas-earth-warriors" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
-          </div>
+        <div class="programs__grid" id="programs-grid">
+          <!-- Programs will be loaded dynamically -->
         </div>
 
         <div class="programs-page__back">
@@ -161,6 +119,54 @@
       </div>
     </div>
   </footer>
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
+  <script>
+    // Load and render programs dynamically
+    async function loadPrograms() {
+      try {
+        const response = await fetch('../data/programs.json');
+        const data = await response.json();
+        const programsGrid = document.getElementById('programs-grid');
+        
+        if (data.programs && data.programs.length > 0) {
+          data.programs.forEach(program => {
+            const programCard = createProgramCard(program);
+            programsGrid.appendChild(programCard);
+          });
+        }
+      } catch (error) {
+        console.error('Error loading programs:', error);
+        // Fallback content
+        document.getElementById('programs-grid').innerHTML = '<p>Unable to load programs. Please try again later.</p>';
+      }
+    }
+
+    function createProgramCard(program) {
+      const card = document.createElement('div');
+      card.className = 'p-card';
+      
+      // Adjust URL for programs.html page (we're already in the programs folder)
+      let adjustedUrl = program.url;
+      if (adjustedUrl.startsWith('./programs/')) {
+        adjustedUrl = adjustedUrl.replace('./programs/', './');
+      }
+      
+      card.innerHTML = `
+        <div class="p-card__icon">${program.icon}</div>
+        <h3 class="p-card__title">${program.title}</h3>
+        <div class="p-card__pills">
+          <span class="pill pill--age">${program.ageGroup}</span>
+          <!-- <span class="pill pill--price">${program.price}</span> -->
+        </div>
+        <p class="p-card__desc">${program.description}</p>
+        <a href="${adjustedUrl}" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
+      `;
+      
+      return card;
+    }
+
+    // Load programs when the page loads
+    document.addEventListener('DOMContentLoaded', loadPrograms);
+  </script>
 </body>
 </html>

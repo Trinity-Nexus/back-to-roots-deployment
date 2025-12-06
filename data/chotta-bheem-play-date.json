@@ -1,0 +1,75 @@
+{
+  "pageTitle": "Chotta Bheem Play Date — Back to Roots",
+  "siteTitle": "Back to Roots",
+  "program": {
+    "title": "Chotta Bheem Play Date",
+    "age": "Ages 4-7",
+    "price": "Rs 500",
+    "description": "Embark on action-packed adventures inspired by our beloved Chhota Bheem's world of courage and friendship. Engage in traditional Indian games, storytelling, and creative activities that build character and confidence.",
+    "imagePath": "../assets/events/Chhota_bheem.jpg",
+    "imageAlt": "Children enjoying Chotta Bheem themed activities"
+  },
+  "experience": {
+    "title": "What You'll Experience",
+    "items": [
+      {
+        "icon": "🦸",
+        "title": "Bheem's Strength Training",
+        "description": "Fun physical activities inspired by Bheem's adventures - obstacle courses, team challenges, and strength-building games."
+      },
+      {
+        "icon": "🍯",
+        "title": "Laddu Making Workshop",
+        "description": "Create healthy, traditional laddus just like Bheem's favorites using natural ingredients and learn about nutritious eating."
+      },
+      {
+        "icon": "🎭",
+        "title": "Character Role Play",
+        "description": "Act out favorite Chotta Bheem stories, develop storytelling skills, and learn about friendship, courage, and helping others."
+      },
+      {
+        "icon": "🎨",
+        "title": "Bheem's Art Corner",
+        "description": "Draw and paint Chotta Bheem characters, create story boards, and make take-home crafts inspired by Dholakpur adventures."
+      }
+    ]
+  },
+  "buttons": {
+    "whatsapp": {
+      "text": "Join / Enquire on WhatsApp",
+      "url": "https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20interested%20in%20the%20Chotta%20Bheem%20Play%20Date.%20Please%20share%20details."
+    },
+    "programs": {
+      "text": "Back to Programs",
+      "url": "../index.html#programs"
+    }
+  },
+  "practicalInfo": {
+    "title": "Practical Info",
+    "items": [
+      {
+        "label": "Age group",
+        "value": "4 – 7 years"
+      },
+      {
+        "label": "Timing",
+        "value": "Morning sessions, 2 hours"
+      },
+      {
+        "label": "Fee",
+        "value": "Rs 500 per child"
+      },
+      {
+        "label": "What to bring",
+        "value": "Play clothes, water bottle, snack box"
+      },
+      {
+        "label": "Take home",
+        "value": "Handmade laddus, character drawings, Bheem storybook"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Back to Roots"
+  }
+}
