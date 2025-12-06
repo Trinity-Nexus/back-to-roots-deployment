@@ -1,0 +1,34 @@
+{
+  "title": "A Glimpse of Childhood in the ’90s: Memories That Shaped Us",
+  "introduction": "For millennials, childhood in the ’90s was a world away from today’s screens, apps, and constant notifications. Whether in cities or villages, those days carried a unique blend of simplicity, imagination, and freedom—something today’s kids are slowly rediscovering.",
+  "content": [
+    {
+      "type": "heading",
+      "text": "Urban Childhood"
+    },
+    {
+      "type": "paragraph",
+      "text": "City kids in the ’90s grew up with narrow lanes, local parks, and roadside chai stalls. Summers meant riding bicycles until the sun dipped, playing lagori, gilli-danda, or hide-and-seek with friends until dusk. Video games were rare luxuries, and Saturday mornings were reserved for Doordarshan or local cricket matches, not back-to-back cartoons on tablets. Birthday parties were modest, but imaginative role-play with neighborhood kids turned simple objects—stones, twigs, old clothes—into treasure maps, forts, or crowns."
+    },
+    {
+      "type": "heading",
+      "text": "Rural Childhood"
+    },
+    {
+      "type": "paragraph",
+      "text": "Life in villages revolved around nature and chores. Fields, streams, and courtyards were the playgrounds. Children spent hours helping in the gardens, feeding animals, or collecting firewood. The creativity of rural childhood was unparalleled—pebbles became counting games, leaves turned into artwork, and mud houses and ponds inspired endless adventures. Stories from grandparents, folk songs, and festivals were part of everyday life, shaping emotional and cultural roots from a very young age."
+    },
+    {
+      "type": "heading",
+      "text": "A Shared Essence"
+    },
+    {
+      "type": "paragraph",
+      "text": "Despite the differences, urban or rural, childhood in the ’90s shared a common thread: freedom to explore, time to imagine, and connection to people and nature. Today, with busy schedules and digital distractions, that sense of rooted joy is rare—but not lost."
+    }
+  ],
+  "image": "../assets/gallery/1.JPG",
+  "relatedArticles": ["slow-down-emotional-wellbeing", "why-back-to-roots"],
+  "call_to_action": "At Back to Roots, we aim to revive that spirit—giving children the chance to play, explore, and grow in ways that leave lasting memories, just like we had in the ’90s."
+  
+}

@@ -1,0 +1,94 @@
+{
+  "programs": [
+    {
+      "id": "chowka-baara-play-date",
+      "icon": "🎲",
+      "title": "Chowka Baara Play Date",
+      "ageGroup": "Ages 6-15",
+      "price": "Rs 399",
+      "description": "Craft your own traditional Chowka Baara board using natural materials and ancient techniques. Experience the strategic gameplay that has entertained generations while connecting with India's rich gaming heritage.",
+      "url": "./programs/program.html?prgm=chowka-baara-play-date"
+    },
+    {
+      "id": "chotta-bheem-play-date",
+      "icon": "🦸",
+      "title": "Chotta Bheem Play Date",
+      "ageGroup": "Ages 4-7",
+      "price": "Rs 500",
+      "description": "Embark on action-packed adventures inspired by our beloved Chhota Bheem's world of courage and friendship. Engage in traditional Indian games, storytelling, and creative activities that build character and confidence.",
+      "url": "./programs/program.html?prgm=chotta-bheem-play-date"
+    },
+    {
+      "id": "origami-craft",
+      "icon": "📜",
+      "title": "Origami Craft",
+      "ageGroup": "Ages 2-8",
+      "price": "Rs 500",
+      "description": "Discover the meditative art of paper folding that enhances focus, patience, and fine motor skills. Create beautiful creatures and objects while learning about Japanese culture and the mindfulness behind each precise fold.",
+      "url": "./programs/program.html?prgm=origami-craft"
+    },
+    {
+      "id": "leafy-creations",
+      "icon": "🍃",
+      "title": "Leafy Creations",
+      "ageGroup": "Ages 2-10",
+      "price": "Rs 500",
+      "description": "Transform ordinary leaves into extraordinary art pieces through traditional eco-friendly crafting techniques. Connect with nature's beauty while developing creativity and environmental awareness through hands-on leaf art activities.",
+      "url": "./programs/program.html?prgm=leafy-creations"
+    },
+    {
+      "id": "whimsical-world-words-jars",
+      "icon": "🫙",
+      "title": "Whismical World - Words & Jars",
+      "ageGroup": "Ages 2-10",
+      "price": "Rs 500",
+      "description": "Create magical storytelling jars filled with words, colors, and tiny treasures that spark imagination. Develop language skills and creative expression while building personal story collections in beautiful, handcrafted memory jars.",
+      "url": "./programs/program.html?prgm=whimsical-world-words-jars"
+    },
+    {
+      "id": "my-first-pot",
+      "icon": "🏺",
+      "title": "My first pot",
+      "ageGroup": "Ages 2-10",
+      "price": "Rs 500",
+      "description": "Experience the ancient art of pottery through hands-on clay work that connects children to traditional craftsmanship. Develop patience, creativity, and tactile skills while creating their very first functional pottery piece to treasure.",
+      "url": "./programs/program.html?prgm=my-first-pot"
+    },
+    {
+      "id": "dasara-play-date",
+      "icon": "🎪",
+      "title": "Dasara Play Mela",
+      "ageGroup": "Ages 6-15",
+      "price": "Rs 500",
+      "description": "This Dasara, let kids discover the joy of tradition at Back to Roots! Fun games, creative crafts, and festive treats.",
+      "url": "./programs/program.html?prgm=dasara-play-date"
+    },
+    {
+      "id": "grains-games-gratitude",
+      "icon": "🦋",
+      "title": "Grains, Games & Gratitude",
+      "ageGroup": "Ages 7-12",
+      "price": "Rs 500",
+      "description": "Create, learn, play, and give back! From crafting mandala art with millets to discovering their nutritional power, enjoying Lagori, and making a heartfelt gratitude card—this journey is all about creativity, tradition, and joy.",
+      "url": "./programs/program.html?prgm=grains-games-gratitude"
+    },
+    {
+      "id": "ajjis-courtyard-adventures",
+      "icon": "🌳",
+      "title": "Ajji's Courtyard Adventures",
+      "ageGroup": "Ages 4-12",
+      "price": "Rs 500",
+      "description": "Step into a world of mud pies, games, seeds & stories just like Ajji's good old days! Craft, plant & play the natural way – at our Courtyard",
+      "url": "./programs/program.html?prgm=ajjis-courtyard-adventures"
+    },
+    {
+      "id": "ajjas-earth-warriors",
+      "icon": "🦋",
+      "title": "Ajja's Earth Warriors",
+      "ageGroup": "Ages 7-12",
+      "price": "Rs 600",
+      "description": "Become a guardian of the earth! Join Ajja's Earth Warriors to learn about composting along with lots of other outdoor fun of his times.",
+      "url": "./programs/program.html?prgm=ajjas-earth-warriors"
+    }
+  ]
+}

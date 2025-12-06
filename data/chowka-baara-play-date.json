@@ -1,0 +1,75 @@
+{
+  "pageTitle": "Chowka Baara Play Date — Back to Roots",
+  "siteTitle": "Back to Roots",
+  "program": {
+    "title": "Chowka Baara Play Date",
+    "age": "Ages 6-15",
+    "price": "Rs 399",
+    "description": "Craft your own traditional Chowka Baara board using natural materials and ancient techniques. Experience the strategic gameplay that has entertained generations while connecting with India's rich gaming heritage.",
+    "imagePath": "../assets/events/chokabaara.jpg",
+    "imageAlt": "Children playing Chowka Baara traditional board game"
+  },
+  "experience": {
+    "title": "What You'll Experience",
+    "items": [
+      {
+        "icon": "🎨",
+        "title": "Board Crafting Circle",
+        "description": "Learn to create your own Chowka Baara board using traditional materials like cloth, natural dyes, and wooden pieces."
+      },
+      {
+        "icon": "🎲",
+        "title": "Game Rules & Strategy",
+        "description": "Master the ancient rules of Chowka Baara, understand winning strategies, and discover the mathematical concepts behind this classic game."
+      },
+      {
+        "icon": "🏆",
+        "title": "Tournament Play",
+        "description": "Participate in friendly tournaments with other children, developing strategic thinking and sportsmanship through competitive play."
+      },
+      {
+        "icon": "📚",
+        "title": "Cultural Storytelling",
+        "description": "Discover the rich history of Chowka Baara through engaging stories about royal courts and ancient Indian gaming traditions."
+      }
+    ]
+  },
+  "buttons": {
+    "whatsapp": {
+      "text": "Join / Enquire on WhatsApp",
+      "url": "https://wa.me/918095803539?text=Hi%20Back%20To%20Roots%2C%20I%27m%20interested%20in%20the%20Chowka%20Baara%20Play%20Date.%20Please%20share%20details."
+    },
+    "programs": {
+      "text": "Back to Programs",
+      "url": "../index.html#programs"
+    }
+  },
+  "practicalInfo": {
+    "title": "Practical Info",
+    "items": [
+      {
+        "label": "Age group",
+        "value": "6 – 15 years"
+      },
+      {
+        "label": "Timing",
+        "value": "Afternoon sessions, 2.5 hours"
+      },
+      {
+        "label": "Fee",
+        "value": "Rs 399 per child"
+      },
+      {
+        "label": "What to bring",
+        "value": "Water bottle, notebook for rules"
+      },
+      {
+        "label": "Take home",
+        "value": "Handcrafted Chowka Baara board, game pieces, rule book"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Back to Roots"
+  }
+}

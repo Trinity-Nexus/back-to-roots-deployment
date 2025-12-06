@@ -438,6 +438,137 @@ async function populateProgramPage(jsonFilePath) {
   }
 }
 
+// Gallery images loading function
+async function loadGalleryImages() {
+  const galleryImages = [
+    '1.JPG',
+    '20.jpg',
+    '2.JPG', 
+    '39.JPG',
+    '15.jpg',
+    '4.JPG',
+    '8.jpeg',
+    '19.jpg',
+    'farmvisit3a.jpg',
+    '39.jpg',
+    'playtime-img-2.jpeg',
+    '8.jpg',
+    'playtime-img-3.jpeg',
+    '10.jpg',
+    'top-impage.jpeg'
+  ];
+
+  // Image descriptions mapping
+  const imageDescriptions = {
+    '1.JPG': 'Homerooms - learning space',
+    '2.JPG': 'Art studio', 
+    '3.JPG': 'Play area slide',
+    '4.JPG': 'Play area slide',
+    '8.jpeg': 'Outdoor discovery',
+    'farmvisit3a.jpg': 'Farm visit experience',
+    'playtime-img-2.jpeg': 'Sand pit play',
+    'playtime-img-3.jpeg': 'Makerspace activities',
+    'top-impage.jpeg': 'Outdoor activities'
+  };
+
+  const photoStrip = document.getElementById('photoStrip');
+  if (!photoStrip) {
+    console.warn('Photo strip container not found');
+    return;
+  }
+
+  // Clear existing content
+  photoStrip.innerHTML = '';
+
+  // Create and append photo cards for each image
+  galleryImages.forEach((imageName) => {
+    const figure = document.createElement('figure');
+    figure.className = 'photo-card';
+    
+    const img = document.createElement('img');
+    img.src = `./assets/gallery/${imageName}`;
+    img.alt = imageDescriptions[imageName] || 'Back to Roots activity';
+    
+    // Add error handling for images that might not load
+    img.onerror = function() {
+      console.warn(`Failed to load image: ${imageName}`);
+      this.style.display = 'none';
+    };
+    
+    figure.appendChild(img);
+    photoStrip.appendChild(figure);
+  });
+
+  // Initialize marquee after images are loaded
+  setTimeout(() => {
+    initPhotoStripMarquee();
+  }, 500);
+}
+
+// Programs carousel - horizontal sliding
+function initProgramsCarousel() {
+  const carousel = document.getElementById('programsCarousel');
+  const track = document.getElementById('programsCarouselTrack');
+  if (!carousel || !track) {
+    console.log('Programs carousel or track not found');
+    return;
+  }
+  
+  const items = Array.from(carousel.querySelectorAll('.program-item'));
+  const indicators = document.getElementById('programsIndicators');
+  const indicatorDots = indicators ? indicators.querySelectorAll('.indicator') : [];
+  
+  console.log('Programs carousel found:', items.length, 'items');
+  
+  let current = 0;
+  let timer = null;
+  const interval = 2000; // 2 seconds
+
+  function show(index) {
+    console.log('Sliding to program:', index);
+    // Move the track to show the selected item
+    const translateX = -index * 100; // Each item is 100% wide
+    track.style.transform = `translateX(${translateX}%)`;
+    
+    // Update indicators
+    indicatorDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(() => {
+      current = (current + 1) % items.length;
+      show(current);
+    }, interval);
+  }
+
+  function stop() { 
+    if (timer) { 
+      clearInterval(timer); 
+      timer = null; 
+    } 
+  }
+
+  // Add click handlers to indicators
+  indicatorDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      current = index;
+      show(current);
+      stop();
+      setTimeout(start, 3000); // Restart after 3 seconds
+    });
+  });
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  // initialize
+  show(0);
+  start();
+}
+
 // Navigation/menu logic
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -503,14 +634,24 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScroll = currentScroll;
   });
   
+  // Load gallery images after a short delay to ensure DOM is ready
+  setTimeout(() => {
+    loadGalleryImages();
+  }, 10);
+  
+  // Initialize programs carousel
+  initProgramsCarousel();
+  
   // Debug log
   console.log('Navigation initialized');
 });
 
-// Photo strip marquee
-(function() {
+// Photo strip marquee function
+function initPhotoStripMarquee() {
   const strip = document.getElementById('photoStrip');
-  if (!strip) return;
+  if (!strip) {
+    return;
+  }
 
   // Wrap existing items into a rail element for duplication
   const rail = document.createElement('div');
@@ -538,12 +679,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lastTime = timestamp;
     pos += speed * delta;
 
-    // When pos exceeds width of first rail, wrap
-   /*  const railWidth = rail.scrollWidth;
-    if (pos >= railWidth) {
-      pos -= railWidth;
-    } */
-
     strip.scrollLeft = Math.floor(pos);
     requestAnimationFrame(step);
   }
@@ -553,7 +688,205 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // start animation
   requestAnimationFrame(step);
-})();
+}
+
+// Load and render programs from JSON
+async function loadPrograms() {
+  try {
+    const response = await fetch('./data/programs.json');
+    if (!response.ok) {
+      throw new Error(`Failed to load programs: ${response.status}`);
+    }
+    const data = await response.json();
+    renderPrograms(data.programs);
+    initializeProgramsCarousel();
+  } catch (error) {
+    console.error('Error loading programs:', error);
+    // Fallback to hardcoded data if JSON fails to load
+    const fallbackPrograms = [
+      {
+        "id": "dasara-play-date",
+        "icon": "🪔",
+        "title": "Dasara Play Mela",
+        "ageGroup": "Ages 6-15",
+        "description": "This Dasara, let kids discover the joy of tradition at Back to Roots! Fun games, creative crafts, and festive treats.",
+        "url": "./programs/program.html?prgm=dasara-play-date"
+      },
+      {
+        "id": "grains-games-gratitude",
+        "icon": "🦋",
+        "title": "Grains, Games & Gratitude",
+        "ageGroup": "Ages 7-12",
+        "description": "Create, learn, play, and give back! From crafting mandala art with millets to discovering their nutritional power, enjoying Lagori, and making a heartfelt gratitude card—this journey is all about creativity, tradition, and joy.",
+        "url": "./programs/program.html?prgm=grains-games-gratitude"
+      },
+      {
+        "id": "ajjis-courtyard-adventures",
+        "icon": "🌳",
+        "title": "Ajji's Courtyard Adventures",
+        "ageGroup": "Ages 4-12",
+        "description": "Step into a world of mud pies, games, seeds & stories just like Ajji's good old days! Craft, plant & play the natural way – at our Courtyard",
+        "url": "./programs/program.html?prgm=ajjis-courtyard-adventures"
+      },
+      {
+        "id": "ajjas-earth-warriors",
+        "icon": "🦋",
+        "title": "Ajja's Earth Warriors",
+        "ageGroup": "Ages 7-12",
+        "description": "Become a guardian of the earth! Join Ajja's Earth Warriors to learn about composting along with lots of other outdoor fun of his times.",
+        "url": "./programs/program.html?prgm=ajjas-earth-warriors"
+      }
+    ];
+    renderPrograms(fallbackPrograms);
+    initializeProgramsCarousel();
+  }
+}
+
+// Render programs HTML from data
+function renderPrograms(programs) {
+  const carousel = document.getElementById('programsCarousel');
+  const indicators = document.getElementById('programsIndicators');
+  
+  if (!carousel || !indicators) return;
+  
+  // Clear existing content
+  carousel.innerHTML = '';
+  indicators.innerHTML = '';
+  
+  // Generate program items
+  programs.forEach((program, index) => {
+    // Create program item
+    const programItem = document.createElement('div');
+    programItem.className = 'program-item';
+    programItem.innerHTML = `
+      <div class="p-card">
+        <div class="p-card__icon">${program.icon}</div>
+        <h3 class="p-card__title">${program.title}</h3>
+        <div class="p-card__pills">
+          <span class="pill pill--age">${program.ageGroup}</span>
+          ${program.price ? `<span class="pill pill--price">${program.price}</span>` : ''}
+        </div>
+        <p class="p-card__desc">${program.description}</p>
+        <a href="${program.url}" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
+      </div>
+    `;
+    carousel.appendChild(programItem);
+    
+    // Create indicator
+    const indicator = document.createElement('span');
+    indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
+    indicators.appendChild(indicator);
+  });
+}
+
+// Initialize programs carousel after content is loaded
+function initializeProgramsCarousel() {
+  const carousel = document.getElementById('programsCarousel');
+  if (!carousel) return;
+  
+  const items = Array.from(carousel.querySelectorAll('.program-item'));
+  const indicators = Array.from(document.querySelectorAll('#programsIndicators .indicator'));
+  let current = 0;
+  let timer = null;
+  const interval = 2000; // 2 seconds
+
+  function show(index) {
+    items.forEach((item, i) => {
+      item.classList.remove('active', 'prev');
+      if (i === index) {
+        item.classList.add('active');
+      } else if (i === (index - 1 + items.length) % items.length) {
+        item.classList.add('prev');
+      }
+    });
+    
+    // Update indicators
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle('active', i === index);
+    });
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(() => {
+      current = (current + 1) % items.length;
+      show(current);
+    }, interval);
+  }
+
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  // Add click handlers for indicators
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      current = index;
+      show(current);
+      stop();
+      start(); // Restart timer
+    });
+  });
+
+  // initialize
+  if (items.length > 0) {
+    show(0);
+    start();
+  }
+}
+
+// Seeds of Wonder carousel initialization function
+function initializeSeedsCarousel() {
+  const carousel = document.getElementById('seedsCarousel');
+  if (!carousel) return;
+  
+  const items = Array.from(carousel.querySelectorAll('.seed-item'));
+  let current = 0;
+  let timer = null;
+  const interval = 4000; // 4 seconds for longer reading time
+
+  function show(index) {
+    items.forEach((item, i) => {
+      item.classList.remove('active', 'prev');
+      if (i === index) {
+        item.classList.add('active');
+      } else if (i === (index - 1 + items.length) % items.length) {
+        item.classList.add('prev');
+      }
+    });
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(() => {
+      current = (current + 1) % items.length;
+      show(current);
+    }, interval);
+  }
+
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  // Initialize
+  if (items.length > 0) {
+    console.log('Initializing seeds carousel with', items.length, 'items');
+    // Ensure all items start in correct state
+    items.forEach(item => {
+      item.classList.remove('active', 'prev');
+    });
+    show(0);
+    start();
+  } else {
+    console.log('No seed items found');
+  }
+}
 
 // Testimonial carousel
 (function() {
@@ -592,6 +925,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // Auto-load program content from JSON if this is a program page
 document.addEventListener('DOMContentLoaded', () => {
   try {
+    // Load programs on the main page
+    if (document.getElementById('programsCarousel')) {
+      loadPrograms();
+    }
+    
+    // Initialize seeds carousel
+    if (document.getElementById('seedsCarousel')) {
+      console.log('Seeds carousel element found, initializing...');
+      initializeSeedsCarousel();
+    }
+    
     // Check if this is a program page by looking for program elements
     const programTitle = document.querySelector('#program-title');
     const isProgramPage = programTitle !== null;

@@ -1,0 +1,90 @@
+{
+  "id": "emotional-wellbeing",
+  "title": "Emotional Wellbeing Through Creative Expression", 
+  "subtitle": "How creative activities help children process emotions and build resilience.",
+  "author": "Back to Roots Team",
+  "publishDate": "November 12, 2024",
+  "readTime": "5 min read",
+  "category": "emotional-wellbeing",
+  "tags": ["emotions", "creativity", "wellbeing", "resilience"],
+  "image": "../assets/gallery/4.JPG",
+  "excerpt": "How creative activities help children process emotions and build resilience.",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "In a world that often prioritizes academic achievement over emotional intelligence, children's feelings can get pushed aside. Yet research consistently shows that emotional wellbeing is the foundation for all learning and healthy development."
+    },
+    {
+      "type": "paragraph",
+      "text": "At Back to Roots, we've discovered that <strong>creative expression</strong> provides one of the most powerful pathways for children to understand, process, and communicate their emotions."
+    },
+    {
+      "type": "heading", 
+      "text": "Why Creative Expression Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Creative activities offer children a safe space to explore their inner world. Unlike verbal communication, which requires sophisticated language skills, art, music, and movement allow even young children to express complex feelings."
+    },
+    {
+      "type": "list",
+      "listType": "unordered",
+      "items": [
+        "<strong>Non-threatening outlet:</strong> Art doesn't judge or demand perfection",
+        "<strong>Symbolic expression:</strong> Children can represent feelings through colors, shapes, and stories",
+        "<strong>Process-focused:</strong> The act of creating is more important than the end result",
+        "<strong>Confidence building:</strong> Every child can create something meaningful",
+        "<strong>Emotional vocabulary:</strong> Helps children identify and name their feelings"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "../assets/gallery/playtime-img-2.jpeg",
+      "alt": "Children engaged in creative activities",
+      "caption": "Creative expression provides a natural outlet for emotions"
+    },
+    {
+      "type": "heading",
+      "text": "Simple Activities for Emotional Expression"
+    },
+    {
+      "type": "paragraph",
+      "text": "You don't need expensive materials or special training. Here are some accessible ways to encourage emotional expression:"
+    },
+    {
+      "type": "list",
+      "listType": "ordered", 
+      "items": [
+        "<strong>Emotion painting:</strong> Use colors to represent different feelings",
+        "<strong>Story stones:</strong> Create stories using painted rocks or simple drawings",
+        "<strong>Feeling journals:</strong> Draw or write about daily emotions", 
+        "<strong>Music and movement:</strong> Express feelings through dance and rhythm",
+        "<strong>Clay work:</strong> Mold emotions into shapes and forms"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Creating a Supportive Environment"
+    },
+    {
+      "type": "paragraph", 
+      "text": "The key is creating an environment where all emotions are welcome and all expressions are valued. This means:"
+    },
+    {
+      "type": "list",
+      "listType": "unordered",
+      "items": [
+        "No judgment about the 'quality' of artwork",
+        "Asking open-ended questions about their creations",
+        "Sharing your own creative expressions",
+        "Displaying their work with pride",
+        "Using their art as starting points for deeper conversations"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "When children feel safe to express themselves creatively, they develop emotional resilience that serves them throughout life. They learn that all feelings are valid, that they have the power to transform difficult emotions, and that they possess unique gifts worth sharing with the world."
+    }
+  ],
+  "relatedArticles": ["unlearning-usual", "childhood-wisdom", "mindful-parenting"]
+}
