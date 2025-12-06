@@ -444,17 +444,16 @@ async function loadGalleryImages() {
     '1.JPG',
     '20.jpg',
     '2.JPG', 
-    '39.JPG',
-    '15.jpg',
+    '39.jpg',
+    '15.JPG',
     '4.JPG',
     '8.jpeg',
     '19.jpg',
     'farmvisit3a.jpg',
-    '39.jpg',
     'playtime-img-2.jpeg',
-    '8.jpg',
+    '8.JPG',
     'playtime-img-3.jpeg',
-    '10.jpg',
+    '10.JPG',
     'top-impage.jpeg'
   ];
 
