@@ -122,7 +122,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Handle different article structures
         if (article.content) {
-            renderedContent = renderArticleContent(article.content);
+            // Handle the current JSON structure
+            if (article.introduction) {
+                renderedContent += `<p class="article-intro">${article.introduction}</p>`;
+            }
+            renderedContent += renderArticleContent(article.content);
         } else {
             // Handle the current JSON structure
             if (article.introduction) {
