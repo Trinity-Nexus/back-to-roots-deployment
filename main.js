@@ -763,12 +763,12 @@ function renderPrograms(programs) {
         <h3 class="p-card__title">${program.title}</h3>
         <div class="p-card__pills">
           <span class="pill pill--age">${program.ageGroup}</span>
-          ${program.price ? `<span class="pill pill--price">${program.price}</span>` : ''}
         </div>
         <p class="p-card__desc">${program.description}</p>
         <a href="${program.url}" target="_blank" rel="noopener noreferrer" class="p-card__cta">Learn More</a>
       </div>
     `;
+    // ${program.price ? `<span class="pill pill--price">${program.price}</span>` : ''}
     carousel.appendChild(programItem);
     
     // Create indicator
