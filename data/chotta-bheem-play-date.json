@@ -5,7 +5,7 @@
     "title": "Chotta Bheem Play Date",
     "age": "Ages 4-7",
     "price": "Rs 500",
-    "description": "Embark on action-packed adventures inspired by our beloved Chhota Bheem's world of courage and friendship. Engage in traditional Indian games, storytelling, and creative activities that build character and confidence.",
+    "description": "A joyful, screen-free immersive play experience inspired by the world of Chhota Bheem—where children don't just watch the hero, they step into his story. Designed with care and creativity, this playdate invites children to explore movement, imagination, and teamwork through guided play in a safe, age-appropriate environment.",
     "imagePath": "../assets/events/Chhota_Bheem.jpg",
     "imageAlt": "Children enjoying Chotta Bheem themed activities"
   },
@@ -13,24 +13,24 @@
     "title": "What You'll Experience",
     "items": [
       {
-        "icon": "🦸",
-        "title": "Bheem's Strength Training",
-        "description": "Fun physical activities inspired by Bheem's adventures - obstacle courses, team challenges, and strength-building games."
+        "icon": "🌈",
+        "title": "What the Experience Includes",
+        "description": "Through creative spaces, movement games, role play, and a mini expedition, children will:<br><br>• Build confidence and courage<br>• Experience teamwork and cooperation<br>• Engage their imagination and creativity<br>• Enjoy joyful, free-flowing play without screens<br><br>Each activity is thoughtfully curated to encourage participation, expression, and connection."
       },
       {
-        "icon": "🍯",
-        "title": "Laddu Making Workshop",
-        "description": "Create healthy, traditional laddus just like Bheem's favorites using natural ingredients and learn about nutritious eating."
+        "icon": "💛",
+        "title": "Why Kids Love It",
+        "description": "<br>• They step into the fun world of Dholakpur<br>• They play, move, and imagine like Bheem<br>• They create, explore, and share joyful moments with peers<br>• They feel included—whether shy first-timers or energetic explorers"
       },
       {
-        "icon": "🎭",
-        "title": "Character Role Play",
-        "description": "Act out favorite Chotta Bheem stories, develop storytelling skills, and learn about friendship, courage, and helping others."
+        "icon": "👧🧒",
+        "title": "Age-Appropriate & Inclusive",
+        "description": "<br>Activities are adapted for different age groups, ensuring: <br><br>• Gentle encouragement for shy children<br>• Engaging challenges for active participants<br>• A sense of comfort, safety, and belonging for every child"
       },
       {
-        "icon": "🎨",
-        "title": "Bheem's Art Corner",
-        "description": "Draw and paint Chotta Bheem characters, create story boards, and make take-home crafts inspired by Dholakpur adventures."
+        "icon": "🎁",
+        "title": "Take-Home Joy",
+        "description": "<br>Every child goes home with: <br><br>• A pocket full of souvenirs<br>• A heart full of stories and memories"
       }
     ]
   },

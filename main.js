@@ -321,7 +321,7 @@ async function populateProgramPage(jsonFilePath) {
       // Set description
       const description = safeQuerySelector('#program-description');
       if (description && content.program.description) {
-        description.textContent = content.program.description;
+        description.innerHTML = content.program.description.replace(/\n/g, '<br>');
       }
       
       // Set image
@@ -353,7 +353,7 @@ async function populateProgramPage(jsonFilePath) {
           
           const icon = item.icon || '';
           const title = item.title || '';
-          const description = item.description || '';
+          const description = (item.description || '').replace(/\n/g, '<br>');
           
           expItem.innerHTML = `
             <div class="exp-item__body">
