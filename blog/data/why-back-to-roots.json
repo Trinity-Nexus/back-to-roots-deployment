@@ -41,16 +41,29 @@
     {
       "type": "paragraph",
       "text": "Our name is also a gentle nudge for parents. Back to Roots reminds us that in the rush of modern life, slowing down and returning to simple joys is not just possible—it’s necessary. Childhood doesn’t need expensive gadgets or over-scheduled routines. What it needs is imagination, mud on the hands, laughter with friends, and stories under the stars."
+    },
+    {
+      "type": "heading",
+      "text": "Why the name fits perfectly"
+    },
+    {
+      "type": "paragraph",
+      "text": "The name Back to Roots is not just a label—it’s our philosophy."
+    },
+    {
+      "type": "list",
+      "items": [
+        "It says what we do: Bring children closer to nature and tradition.",
+        "It says how we do it: Through simple, hands-on, playful experiences.",
+        "It says why we do it: To nurture strong, joyful, and grounded children."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "In every activity, story, and game, we are simply helping children do what comes naturally—grow with roots."
     }
   ],
   "image": "../assets/icons/logo-C0GJMs8s.jpeg",
-  "why_the_name_fits perfectly                            The name Back to Roots is not just a label—it’s our philosophy.": {
-    "meaning": [
-      "It says what we do: Bring children closer to nature and tradition.",
-      "It says how we do it: Through simple, hands-on, playful experiences.",
-      "It says why we do it: To nurture strong, joyful, and grounded children.                                  \n  In every activity, story, and game, we are simply helping children do what comes naturally—grow with roots."
-    ]
-  },
   "relatedArticles": ["glimpse-of-90s-childhood", "slow-down-emotional-wellbeing"],
   "closing_note": "💚 At Back to Roots, we aren’t just creating programs. We are creating memories, building values, and nurturing the kind of childhood that lasts a lifetime."
 }

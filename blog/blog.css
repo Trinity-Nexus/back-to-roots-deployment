@@ -541,6 +541,43 @@ body {
   font-style: italic;
 }
 
+/* Closing Note */
+.article-closing {
+  background: #FFF8F0;
+  border-left: 4px solid #CD5C4D;
+  padding: 24px 32px;
+  margin: 32px 0;
+  border-radius: 8px;
+}
+
+.article-closing p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5E3517;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Call to Action */
+.article-cta {
+  background: linear-gradient(135deg, #5E8C2C 0%, #7BA53A 100%);
+  color: white;
+  padding: 32px;
+  border-radius: 12px;
+  margin: 40px 0 32px 0;
+  box-shadow: 0 4px 16px rgba(94, 140, 44, 0.2);
+}
+
+.article-cta p {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
 /* Related Articles */
 .related-articles {
   border-top: 1px solid #e2e8f0;

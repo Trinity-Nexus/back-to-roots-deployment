@@ -114,7 +114,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('articleAuthor').textContent = article.author ? `By ${article.author}` : 'By Back to Roots Team';
         document.getElementById('articleDate').textContent = articleMeta ? formatDate(articleMeta.publishDate) : '';
         document.getElementById('articleReadTime').textContent = articleMeta ? articleMeta.readTime : '';
-        document.getElementById('articleImage').src = articleMeta ? articleMeta.image : '../assets/icons/logo-C0GJMs8s.jpeg';
+        // Use article's own image if available, otherwise fall back to index image
+        const articleImage = article.image || (articleMeta ? articleMeta.image : '../assets/icons/logo-C0GJMs8s.jpeg');
+        document.getElementById('articleImage').src = articleImage;
         document.getElementById('articleImage').alt = article.title || '';
         
         // Render content based on article structure
@@ -164,15 +166,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderedContent += '</section>';
             }
             
-            // Handle b2r_message
-            if (article.b2r_message) {
-                renderedContent += `<section class="article-section"><h3>Our Message</h3><p>${article.b2r_message}</p></section>`;
-            }
             
-            // Handle closing_note
-            if (article.closing_note) {
-                renderedContent += `<div class="article-closing"><p><em>${article.closing_note}</em></p></div>`;
-            }
+        }
+
+         // Handle b2r_message
+        if (article.b2r_message) {
+            renderedContent += `<section class="article-section"><h3>Our Message</h3><p>${article.b2r_message}</p></section>`;
+        }
+        
+        // Add call to action if available
+        if (article.call_to_action) {
+            renderedContent += `<div class="article-cta"><p>${article.call_to_action}</p></div>`;
+        }
+
+        // Handle closing_note
+        if (article.closing_note) {
+            renderedContent += `<div class="article-closing"><p><em>${article.closing_note}</em></p></div>`;
         }
         
         document.getElementById('articleBody').innerHTML = renderedContent;
